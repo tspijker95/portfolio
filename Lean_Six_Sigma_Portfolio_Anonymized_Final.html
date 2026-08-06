@@ -1,0 +1,1215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An anonymized Lean Six Sigma project portfolio covering 17 implemented and client-validated engagements.">
+  <title>Lean Six Sigma Project Portfolio</title>
+  <style>
+    :root {
+      --ink: #102a43;
+      --ink-2: #243b53;
+      --muted: #627d98;
+      --line: #d9e2ec;
+      --paper: #ffffff;
+      --canvas: #f4f7f9;
+      --teal: #147d7e;
+      --teal-dark: #0d5f61;
+      --teal-soft: #dceeee;
+      --gold: #d6a84b;
+      --gold-soft: #f6ecd3;
+      --green: #236b2d;
+      --shadow: 0 14px 36px rgba(16, 42, 67, .09);
+      --radius: 18px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink-2);
+      background: var(--canvas);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+    button, input, select { font: inherit; }
+    button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible, summary:focus-visible {
+      outline: 3px solid rgba(20, 125, 126, .35);
+      outline-offset: 3px;
+    }
+    .shell { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .section { padding: 88px 0; }
+    .section-tight { padding: 64px 0; }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 430px);
+      gap: 36px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+    .section-head h2 {
+      margin: 6px 0 0;
+      color: var(--ink);
+      font-size: clamp(2rem, 4vw, 3.55rem);
+      line-height: 1.02;
+      letter-spacing: -.045em;
+    }
+    .section-head p { margin: 0; color: var(--muted); font-size: 1.05rem; }
+    .eyebrow {
+      margin: 0;
+      color: var(--teal);
+      font-weight: 800;
+      font-size: .76rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -60px;
+      z-index: 100;
+      padding: 10px 14px;
+      color: white;
+      background: var(--ink);
+      border-radius: 8px;
+    }
+    .skip-link:focus { top: 12px; }
+
+    /* Navigation */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      color: white;
+      background: rgba(16, 42, 67, .96);
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      backdrop-filter: blur(14px);
+    }
+    .nav-inner {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      color: var(--ink);
+      background: var(--gold);
+      border-radius: 9px;
+      font-size: .78rem;
+      font-weight: 900;
+    }
+    .nav-links { display: flex; gap: 22px; align-items: center; }
+    .nav-links a {
+      color: rgba(255,255,255,.78);
+      text-decoration: none;
+      font-size: .88rem;
+      font-weight: 700;
+    }
+    .nav-links a:hover, .nav-links a.active { color: white; }
+    .print-btn {
+      min-height: 40px;
+      padding: 0 14px;
+      color: white;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .print-btn:hover { background: rgba(255,255,255,.08); }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 82% 18%, rgba(214,168,75,.24), transparent 24%),
+        radial-gradient(circle at 12% 94%, rgba(20,125,126,.55), transparent 34%),
+        linear-gradient(135deg, #102a43 0%, #102a43 54%, #153e59 100%);
+      padding: 96px 0 80px;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -8% -38% auto;
+      width: 540px;
+      height: 540px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 50%;
+      box-shadow: 0 0 0 80px rgba(255,255,255,.025), 0 0 0 160px rgba(255,255,255,.018);
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(310px, .65fr);
+      gap: 64px;
+      align-items: end;
+    }
+    .hero h1 {
+      max-width: 840px;
+      margin: 14px 0 24px;
+      font-size: clamp(3.2rem, 7.5vw, 6.9rem);
+      line-height: .92;
+      letter-spacing: -.065em;
+    }
+    .hero .lead {
+      max-width: 720px;
+      margin: 0;
+      color: rgba(255,255,255,.74);
+      font-size: clamp(1.06rem, 2vw, 1.32rem);
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+    .hero-meta span {
+      padding: 8px 12px;
+      color: rgba(255,255,255,.9);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 999px;
+      font-size: .84rem;
+      font-weight: 700;
+    }
+    .hero-side {
+      padding: 26px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: var(--radius);
+      backdrop-filter: blur(6px);
+    }
+    .hero-side p { margin: 0 0 18px; color: rgba(255,255,255,.65); font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 800; }
+    .hero-side dl { display: grid; grid-template-columns: 1fr auto; gap: 13px 18px; margin: 0; }
+    .hero-side dt { color: rgba(255,255,255,.7); }
+    .hero-side dd { margin: 0; color: white; font-weight: 800; }
+
+    /* KPI strip */
+    .kpi-section { position: relative; z-index: 3; margin-top: -34px; }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .kpi {
+      min-width: 0;
+      padding: 25px 26px 27px;
+      border-right: 1px solid var(--line);
+    }
+    .kpi:last-child { border-right: 0; }
+    .kpi span {
+      display: block;
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .kpi strong {
+      display: block;
+      margin-top: 8px;
+      color: var(--ink);
+      font-size: clamp(1.8rem, 3vw, 2.65rem);
+      line-height: 1;
+      letter-spacing: -.04em;
+    }
+    .kpi small { display: block; margin-top: 8px; color: var(--muted); }
+
+    /* Impact */
+    .impact-grid {
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 28px;
+    }
+    .panel {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 28px rgba(16,42,67,.06);
+    }
+    .panel-pad { padding: 30px; }
+    .panel h3 { margin: 0; color: var(--ink); font-size: 1.32rem; letter-spacing: -.025em; }
+    .panel-sub { margin: 7px 0 0; color: var(--muted); font-size: .92rem; }
+    .donut-wrap { display: grid; place-items: center; padding: 34px 0 24px; }
+    .donut {
+      position: relative;
+      width: min(250px, 66vw);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: conic-gradient(var(--teal) 0 97.131%, var(--gold) 97.131% 100%);
+    }
+    .donut::before {
+      content: "";
+      position: absolute;
+      width: 67%;
+      height: 67%;
+      background: white;
+      border-radius: 50%;
+    }
+    .donut-center { position: relative; text-align: center; }
+    .donut-center strong { display: block; color: var(--ink); font-size: 2rem; letter-spacing: -.045em; }
+    .donut-center span { color: var(--muted); font-size: .8rem; font-weight: 700; }
+    .legend { display: grid; gap: 10px; }
+    .legend-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: .9rem; }
+    .legend-label { display: flex; align-items: center; gap: 9px; color: var(--muted); }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--teal); }
+    .dot.gold { background: var(--gold); }
+    .legend-row strong { color: var(--ink); }
+    .impact-list { margin-top: 28px; display: grid; gap: 19px; }
+    .impact-row { display: grid; grid-template-columns: 165px minmax(80px, 1fr) 65px; gap: 14px; align-items: center; }
+    .impact-label { min-width: 0; }
+    .impact-label strong { display: block; color: var(--ink); }
+    .impact-label span { display: block; color: var(--muted); font-size: .78rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .impact-track { height: 11px; overflow: hidden; background: #e9eff4; border-radius: 999px; }
+    .impact-track span { display: block; height: 100%; background: linear-gradient(90deg, var(--teal-dark), var(--teal)); border-radius: inherit; }
+    .impact-value { color: var(--ink); text-align: right; font-weight: 850; }
+
+    /* Delivery facts */
+    .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .fact {
+      padding: 22px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+    .fact strong { display: block; color: var(--ink); font-size: 1.35rem; letter-spacing: -.03em; }
+    .fact span { display: block; margin-top: 5px; color: var(--muted); font-size: .88rem; }
+
+    /* Selected cases */
+    .cases-bg { background: #edf3f6; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .feature-list { display: grid; gap: 22px; }
+    .case-feature {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 28px rgba(16,42,67,.055);
+      overflow: hidden;
+    }
+    .case-feature-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 28px;
+      align-items: flex-start;
+      padding: 26px 28px 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    .case-feature h3 { margin: 5px 0 0; color: var(--ink); font-size: clamp(1.35rem, 2.6vw, 2rem); letter-spacing: -.035em; }
+    .case-impact { flex: 0 0 auto; color: var(--teal-dark); font-size: clamp(1.5rem, 3vw, 2.35rem); font-weight: 900; letter-spacing: -.05em; }
+    .case-story { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+    .case-story > div { min-width: 0; padding: 24px 28px 28px; border-right: 1px solid var(--line); }
+    .case-story > div:last-child { border-right: 0; }
+    .case-story span { color: var(--muted); font-size: .73rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+    .case-story p { margin: 8px 0 0; }
+    .case-story .result-panel { background: linear-gradient(135deg, var(--teal-soft), #eef8f7); }
+    .case-story .result-panel p { color: var(--ink); font-weight: 750; }
+
+    /* Explorer */
+    .explorer-controls {
+      position: sticky;
+      top: 68px;
+      z-index: 20;
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) 220px 220px 180px;
+      gap: 12px;
+      padding: 14px;
+      background: rgba(244,247,249,.95);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+      margin-bottom: 24px;
+    }
+    .control {
+      min-height: 46px;
+      width: 100%;
+      padding: 0 13px;
+      color: var(--ink-2);
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    .results-meta { margin: 0 0 15px; color: var(--muted); font-size: .88rem; }
+    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    @media (hover:hover) and (pointer:fine) {
+      .project-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: #bdcbd7; }
+    }
+    .project-main { padding: 23px 24px 17px; }
+    .project-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+    .project-card h3 { margin: 5px 0 0; color: var(--ink); font-size: 1.25rem; line-height: 1.18; letter-spacing: -.03em; }
+    .money { flex: 0 0 auto; color: var(--teal-dark); font-weight: 900; font-size: 1.2rem; letter-spacing: -.035em; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 17px; }
+    .tag {
+      padding: 5px 8px;
+      color: var(--teal-dark);
+      background: var(--teal-soft);
+      border-radius: 999px;
+      font-size: .72rem;
+      font-weight: 800;
+    }
+    .tag.gold { color: #795812; background: var(--gold-soft); }
+    .project-result { margin: 18px 0 0; color: var(--ink-2); font-weight: 700; }
+    .project-data {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin-top: auto;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .project-data div { padding: 13px 16px; border-right: 1px solid var(--line); }
+    .project-data div:last-child { border-right: 0; }
+    .project-data span { display: block; color: var(--muted); font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+    .project-data strong { display: block; margin-top: 4px; color: var(--ink); font-size: .92rem; }
+    details { background: #fbfcfd; }
+    details summary {
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 0 24px;
+      color: var(--ink);
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::after { content: "+"; color: var(--teal); font-size: 1.35rem; }
+    details[open] summary::after { content: "−"; }
+    .detail-body { padding: 0 24px 24px; display: grid; gap: 17px; }
+    .detail-body div { padding-top: 15px; border-top: 1px solid var(--line); }
+    .detail-body h4 { margin: 0 0 5px; color: var(--muted); font-size: .71rem; letter-spacing: .1em; text-transform: uppercase; }
+    .detail-body p { margin: 0; }
+    .empty-state {
+      grid-column: 1 / -1;
+      padding: 46px;
+      text-align: center;
+      background: white;
+      border: 1px dashed #aebdca;
+      border-radius: 16px;
+      color: var(--muted);
+    }
+
+    /* Capability */
+    .capability-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .capability-item { padding: 20px 22px; background: white; border: 1px solid var(--line); border-radius: 14px; }
+    .capability-heading { display: flex; justify-content: space-between; gap: 20px; align-items: baseline; }
+    .capability-heading h3 { margin: 0; color: var(--ink); font-size: 1rem; }
+    .capability-heading strong { color: var(--teal); font-size: 1.15rem; }
+    .capability-bar { height: 7px; margin: 12px 0 11px; background: #e7eef3; border-radius: 999px; overflow: hidden; }
+    .capability-bar span { display: block; height: 100%; background: linear-gradient(90deg, var(--teal-dark), var(--teal)); border-radius: inherit; }
+    .capability-item p { margin: 0; color: var(--muted); font-size: .86rem; }
+
+    /* Footer */
+    footer { color: rgba(255,255,255,.72); background: var(--ink); padding: 46px 0; }
+    .footer-grid { display: flex; justify-content: space-between; gap: 28px; align-items: flex-start; }
+    footer strong { color: white; }
+    footer p { margin: 5px 0 0; max-width: 650px; }
+    .footer-note { font-size: .82rem; text-align: right; }
+    .contact-block { display: grid; gap: 3px; font-style: normal; text-align: right; }
+    .contact-block strong { color: white; font-size: 1rem; }
+    .contact-block span, .contact-block a { color: rgba(255,255,255,.72); font-size: .84rem; text-decoration: none; }
+    .contact-block a:hover { color: white; text-decoration: underline; }
+
+    .reveal { opacity: 0; transform: translateY(14px); }
+    .reveal.visible { opacity: 1; transform: none; transition: opacity .55s ease, transform .55s ease; }
+
+    @media (max-width: 980px) {
+      .nav-links a { display: none; }
+      .hero-grid, .section-head, .impact-grid { grid-template-columns: 1fr; }
+      .hero-side { max-width: 620px; }
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+      .kpi:nth-child(2) { border-right: 0; }
+      .kpi:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .facts-grid { grid-template-columns: repeat(2, 1fr); }
+      .case-story { grid-template-columns: 1fr; }
+      .case-story > div { border-right: 0; border-bottom: 1px solid var(--line); }
+      .case-story > div:last-child { border-bottom: 0; }
+      .explorer-controls { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 720px) {
+      .shell { width: min(100% - 24px, var(--max)); }
+      .section { padding: 66px 0; }
+      .hero { padding: 72px 0 64px; }
+      .hero h1 { font-size: clamp(3rem, 15vw, 5.2rem); }
+      .hero-grid { gap: 40px; }
+      .kpi-grid, .facts-grid, .project-grid, .capability-grid { grid-template-columns: 1fr; }
+      .kpi { border-right: 0; border-bottom: 1px solid var(--line); }
+      .kpi:last-child { border-bottom: 0; }
+      .impact-row { grid-template-columns: 120px minmax(60px, 1fr) 55px; gap: 9px; }
+      .case-feature-top { flex-direction: column; gap: 11px; }
+      .explorer-controls { position: static; grid-template-columns: 1fr; }
+      .project-data { grid-template-columns: 1fr; }
+      .project-data div { border-right: 0; border-bottom: 1px solid var(--line); }
+      .project-data div:last-child { border-bottom: 0; }
+      .footer-grid { flex-direction: column; }
+      .footer-note { text-align: left; }
+      .contact-block { text-align: left; }
+      .print-btn { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+
+    @media print {
+      :root { --canvas: #fff; }
+      body { background: white; font-size: 10pt; }
+      .site-nav, .explorer-controls, .print-btn { display: none !important; }
+      .hero { color: var(--ink); background: white; padding: 20px 0 30px; border-bottom: 2px solid var(--ink); }
+      .hero .lead, .hero-side dt, .hero-side p { color: var(--muted); }
+      .hero-meta span, .hero-side { color: var(--ink); background: white; border-color: var(--line); }
+      .hero-side dd { color: var(--ink); }
+      .kpi-section { margin-top: 0; }
+      .section, .section-tight { padding: 28px 0; }
+      .panel, .project-card, .case-feature, .capability-item, .kpi-grid { box-shadow: none; break-inside: avoid; }
+      .project-grid { grid-template-columns: 1fr; }
+      details { break-inside: avoid; }
+      details .detail-body { display: grid !important; }
+      footer { color: var(--ink); background: white; border-top: 1px solid var(--line); }
+      footer strong { color: var(--ink); }
+      .contact-block strong, .contact-block span, .contact-block a { color: var(--ink); }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Portfolio navigation">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark">LSS</span>
+        <span>Project Portfolio</span>
+      </a>
+      <div class="nav-links">
+        <a href="#impact">Impact</a>
+        <a href="#cases">Selected cases</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#capabilities">Capabilities</a>
+        <button class="print-btn" type="button" id="printButton">Print / Save PDF</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="shell hero-grid">
+      <div>
+        <p class="eyebrow" style="color:#f1cf84">Thomas Spijker · Senior Management Consultant · Lean Six Sigma Black Belt</p>
+        <h1>From analysis to implemented impact.</h1>
+        <p class="lead">17 implemented improvement engagements across healthcare, life sciences and corporate operations — €51.7 million in analyzed spend and €6.69 million in realized financial impact.</p>
+        <div class="hero-meta" aria-label="Portfolio facts">
+          <span>4.5 years</span>
+          <span>No-cure-no-pay delivery</span>
+          <span>End-to-end implementation</span>
+          <span>Junior &amp; Medior team leadership</span>
+        </div>
+      </div>
+      <aside class="hero-side" aria-label="Delivery profile">
+        <p>Delivery profile</p>
+        <dl>
+          <dt>Typical engagement</dt><dd>9–18 months</dd>
+          <dt>Concurrent workstreams</dt><dd>4–5</dd>
+          <dt>Typical team</dt><dd>2–3 consultants</dd>
+          <dt>Governance</dt><dd>Working group + steering committee</dd>
+          <dt>Validation</dt><dd>Client-approved</dd>
+        </dl>
+      </aside>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="kpi-section" aria-label="Portfolio metrics">
+      <div class="shell">
+        <div class="kpi-grid">
+          <div class="kpi">
+            <span>Projects</span>
+            <strong data-count="17" data-format="integer">17</strong>
+            <small>Implemented engagements</small>
+          </div>
+          <div class="kpi">
+            <span>Analyzed spend</span>
+            <strong data-count="51680079" data-format="money">€51.68m</strong>
+            <small>Known annual baseline</small>
+          </div>
+          <div class="kpi">
+            <span>Financial impact</span>
+            <strong data-count="6692222" data-format="money">€6.69m</strong>
+            <small>Recurring + recovered</small>
+          </div>
+          <div class="kpi">
+            <span>Annual impact rate</span>
+            <strong data-count="12.57775167100654" data-format="percent">12.6%</strong>
+            <small>Recurring impact / known spend</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="impact">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Portfolio impact</p>
+            <h2>€6.69m across six anonymized clients.</h2>
+          </div>
+          <p>Recurring savings and one-off recoveries are separated. Percentages are shown only where a comparable annual spend baseline is available.</p>
+        </div>
+
+        <div class="impact-grid">
+          <article class="panel panel-pad reveal">
+            <h3>Impact composition</h3>
+            <p class="panel-sub">Realized and client-validated</p>
+            <div class="donut-wrap">
+              <div class="donut" role="img" aria-label="€6.50m recurring annual savings and €192k one-off cash recovery">
+                <div class="donut-center">
+                  <strong>97.1%</strong>
+                  <span>recurring</span>
+                </div>
+              </div>
+            </div>
+            <div class="legend">
+              <div class="legend-row">
+                <div class="legend-label"><span class="dot"></span>Recurring annual savings</div>
+                <strong>€6,500,192</strong>
+              </div>
+              <div class="legend-row">
+                <div class="legend-label"><span class="dot gold"></span>One-off cash recovery</div>
+                <strong>€192,030</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel panel-pad reveal">
+            <h3>Impact by client</h3>
+            <p class="panel-sub">Client names and identifying details removed</p>
+            <div class="impact-list">
+              
+    <div class="impact-row">
+      <div class="impact-label">
+        <strong>Client D</strong>
+        <span>Specialized care</span>
+      </div>
+      <div class="impact-track" aria-label="Client D: €3,507,192">
+        <span style="width:100.00%"></span>
+      </div>
+      <div class="impact-value">€3.51m</div>
+    </div>
+    
+
+    <div class="impact-row">
+      <div class="impact-label">
+        <strong>Client B</strong>
+        <span>Mental health care</span>
+      </div>
+      <div class="impact-track" aria-label="Client B: €1,042,704">
+        <span style="width:29.73%"></span>
+      </div>
+      <div class="impact-value">€1.04m</div>
+    </div>
+    
+
+    <div class="impact-row">
+      <div class="impact-label">
+        <strong>Client F</strong>
+        <span>Elderly care</span>
+      </div>
+      <div class="impact-track" aria-label="Client F: €844,758">
+        <span style="width:24.09%"></span>
+      </div>
+      <div class="impact-value">€845k</div>
+    </div>
+    
+
+    <div class="impact-row">
+      <div class="impact-label">
+        <strong>Client C</strong>
+        <span>Disability care</span>
+      </div>
+      <div class="impact-track" aria-label="Client C: €671,890">
+        <span style="width:19.16%"></span>
+      </div>
+      <div class="impact-value">€672k</div>
+    </div>
+    
+
+    <div class="impact-row">
+      <div class="impact-label">
+        <strong>Client E</strong>
+        <span>Corporate organization</span>
+      </div>
+      <div class="impact-track" aria-label="Client E: €476,560">
+        <span style="width:13.59%"></span>
+      </div>
+      <div class="impact-value">€477k</div>
+    </div>
+    
+
+    <div class="impact-row">
+      <div class="impact-label">
+        <strong>Client A</strong>
+        <span>Global life sciences</span>
+      </div>
+      <div class="impact-track" aria-label="Client A: €149,118">
+        <span style="width:4.25%"></span>
+      </div>
+      <div class="impact-value">€149k</div>
+    </div>
+    
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="shell">
+        <div class="facts-grid">
+          <div class="fact reveal"><strong>17 / 17</strong><span>Client-validated financial outcomes</span></div>
+          <div class="fact reveal"><strong>€3.42m</strong><span>Largest single engagement impact</span></div>
+          <div class="fact reveal"><strong>70% → 88%</strong><span>Contingent workforce fill rate</span></div>
+          <div class="fact reveal"><strong>44.5% → 78%</strong><span>First Time Right performance</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cases-bg" id="cases">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Selected cases</p>
+            <h2>Six engagements. Six different operating levers.</h2>
+          </div>
+          <p>Commercial, operational, contractual and data-led interventions. Full role and delivery detail is available in the case library below.</p>
+        </div>
+        <div class="feature-list">
+          
+      <article class="case-feature reveal">
+        <div class="case-feature-top">
+          <div>
+            <p class="eyebrow">Client D · Specialized care</p>
+            <h3>Contingent workforce</h3>
+          </div>
+          <div class="case-impact">€3,423,467</div>
+        </div>
+        <div class="case-story">
+          <div>
+            <span>Challenge</span>
+            <p>The organization used approximately 12 to 15 suppliers across a broad range of roles and rates. The hiring process lacked transparency and shifts were regularly left unfilled, incorrectly filled or duplicated.</p>
+          </div>
+          <div>
+            <span>Intervention</span>
+            <p>Rates and contractual terms were tightened and standardized. The full workforce process was redesigned, implemented and embedded, including legal provisions on liability, tax treatment and false self-employment risk.</p>
+          </div>
+          <div class="result-panel">
+            <span>Result</span>
+            <p>Fill rate 70% → 88%; sharper rates, increased contract coverage and improved compliance.</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="case-feature reveal">
+        <div class="case-feature-top">
+          <div>
+            <p class="eyebrow">Client B · Mental health care</p>
+            <h3>Contingent workforce – Care</h3>
+          </div>
+          <div class="case-impact">€753,503</div>
+        </div>
+        <div class="case-story">
+          <div>
+            <span>Challenge</span>
+            <p>The contingent workforce was fragmented across many suppliers. Rates and shift allowances varied, contract coverage was often missing and the requisition process lacked structure.</p>
+          </div>
+          <div>
+            <span>Intervention</span>
+            <p>A new flexible workforce model and structured requisition process were implemented. Shifts are offered internally first and then released externally according to a defined supplier sequence. Rates and contractual conditions were standardized and formalized.</p>
+          </div>
+          <div class="result-panel">
+            <span>Result</span>
+            <p>Standardized rates, increased contract coverage and a transparent, automated requisition process.</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="case-feature reveal">
+        <div class="case-feature-top">
+          <div>
+            <p class="eyebrow">Client F · Elderly care</p>
+            <h3>Food</h3>
+          </div>
+          <div class="case-impact">€362,644</div>
+        </div>
+        <div class="case-story">
+          <div>
+            <span>Challenge</span>
+            <p>The food assortment was very broad and largely unstandardized. Locations purchased different product types and quality levels, limiting scale benefits and control.</p>
+          </div>
+          <div>
+            <span>Intervention</span>
+            <p>A core assortment was developed with users, implemented, monitored and refined. The number of products was reduced from approximately 4,600 to 1,000 and the concentrated purchasing base was used in supplier negotiations.</p>
+          </div>
+          <div class="result-panel">
+            <span>Result</span>
+            <p>Assortment approximately 4,600 → 1,000 items. Savings mix: approximately 30% pack-size changes, 40% A-to-B brand substitution and 30% price.</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="case-feature reveal">
+        <div class="case-feature-top">
+          <div>
+            <p class="eyebrow">Client F · Elderly care</p>
+            <h3>Rent and building maintenance – process optimization</h3>
+          </div>
+          <div class="case-impact">€244,231</div>
+        </div>
+        <div class="case-story">
+          <div>
+            <span>Challenge</span>
+            <p>The maintenance supplier required many repeat visits to resolve issues, creating additional costs and lost time for employees supporting supplier visits.</p>
+          </div>
+          <div>
+            <span>Intervention</span>
+            <p>A new request process was designed so users provide more complete information on what is required at the location. Waste was removed with the supplier and preparation for site visits was improved.</p>
+          </div>
+          <div class="result-panel">
+            <span>Result</span>
+            <p>First Time Right 44.5% → 78%, exceeding the 75% target.</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="case-feature reveal">
+        <div class="case-feature-top">
+          <div>
+            <p class="eyebrow">Client C · Disability care</p>
+            <h3>Office supplies</h3>
+          </div>
+          <div class="case-impact">€147,130</div>
+        </div>
+        <div class="case-story">
+          <div>
+            <span>Challenge</span>
+            <p>Purchasing was fragmented across many small suppliers. This limited volume leverage and created a high volume of low-value invoices for Finance.</p>
+          </div>
+          <div>
+            <span>Intervention</span>
+            <p>Tail suppliers were consolidated into one provider. Prices were reduced and ordering, quality and assortment were centralized and standardized.</p>
+          </div>
+          <div class="result-panel">
+            <span>Result</span>
+            <p>Suppliers 65 → 1; invoices approximately 14,000 → 12 per year.</p>
+          </div>
+        </div>
+      </article>
+    
+
+      <article class="case-feature reveal">
+        <div class="case-feature-top">
+          <div>
+            <p class="eyebrow">Client C · Disability care</p>
+            <h3>Transport claims</h3>
+          </div>
+          <div class="case-impact">€239,338</div>
+        </div>
+        <div class="case-story">
+          <div>
+            <span>Challenge</span>
+            <p>Differences arose between clients actually transported, claims submitted and journeys invoiced, both in quantities and claim types.</p>
+          </div>
+          <div>
+            <span>Intervention</span>
+            <p>A standardized control and reconciliation process was designed and implemented to identify and correct differences between journeys, claims and invoicing in a timely manner.</p>
+          </div>
+          <div class="result-panel">
+            <span>Result</span>
+            <p>Approximately 700–800 annual mismatches identified at baseline; recurring mismatch detection and follow-up established.</p>
+          </div>
+        </div>
+      </article>
+    
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Case library</p>
+            <h2>Explore all 17 projects.</h2>
+          </div>
+          <p>Filter by sector, intervention or impact. Open a case for the challenge, approach, role, implementation and validation status.</p>
+        </div>
+
+        <div class="explorer-controls" aria-label="Portfolio filters">
+          <input class="control" id="searchInput" type="search" placeholder="Search projects, tools or results" aria-label="Search projects">
+          <select class="control" id="clientFilter" aria-label="Filter by client">
+            <option value="">All clients</option>
+          </select>
+          <select class="control" id="categoryFilter" aria-label="Filter by intervention">
+            <option value="">All interventions</option>
+          </select>
+          <select class="control" id="sortSelect" aria-label="Sort projects">
+            <option value="impact-desc">Impact: high to low</option>
+            <option value="impact-asc">Impact: low to high</option>
+            <option value="saving-desc">Savings %: high to low</option>
+            <option value="project-asc">Project: A–Z</option>
+          </select>
+        </div>
+        <p class="results-meta" id="resultsMeta" aria-live="polite"></p>
+        <div class="project-grid" id="projectGrid"></div>
+      </div>
+    </section>
+
+    <section class="section cases-bg" id="capabilities">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Capability profile</p>
+            <h2>Methods used across the portfolio.</h2>
+          </div>
+          <p>Counts indicate the number of projects in which each method or capability was a material part of the delivery.</p>
+        </div>
+        <div class="capability-grid">
+          
+      <article class="capability-item reveal">
+        <div class="capability-heading">
+          <h3>Excel data analysis</h3>
+          <strong>15</strong>
+        </div>
+        <div class="capability-bar" aria-hidden="true"><span style="width:100.0%"></span></div>
+        <p>Spend, rates, invoices, inventory, licenses, occupancy and reconciliations</p>
+      </article>
+    
+
+      <article class="capability-item reveal">
+        <div class="capability-heading">
+          <h3>Power BI / dashboarding</h3>
+          <strong>2</strong>
+        </div>
+        <div class="capability-bar" aria-hidden="true"><span style="width:13.3%"></span></div>
+        <p>Transport claims and recurring controls</p>
+      </article>
+    
+
+      <article class="capability-item reveal">
+        <div class="capability-heading">
+          <h3>Process analysis and design</h3>
+          <strong>13</strong>
+        </div>
+        <div class="capability-bar" aria-hidden="true"><span style="width:86.7%"></span></div>
+        <p>Contingent workforce, transport, maintenance, licenses and service delivery</p>
+      </article>
+    
+
+      <article class="capability-item reveal">
+        <div class="capability-heading">
+          <h3>Strategic sourcing / tendering</h3>
+          <strong>5</strong>
+        </div>
+        <div class="capability-bar" aria-hidden="true"><span style="width:33.3%"></span></div>
+        <p>Contingent workforce, security, medical equipment and food</p>
+      </article>
+    
+
+      <article class="capability-item reveal">
+        <div class="capability-heading">
+          <h3>Commercial negotiations</h3>
+          <strong>7</strong>
+        </div>
+        <div class="capability-bar" aria-hidden="true"><span style="width:46.7%"></span></div>
+        <p>Rates, contractual terms, service levels and scope</p>
+      </article>
+    
+
+      <article class="capability-item reveal">
+        <div class="capability-heading">
+          <h3>Contract compliance</h3>
+          <strong>4</strong>
+        </div>
+        <div class="capability-bar" aria-hidden="true"><span style="width:26.7%"></span></div>
+        <p>VAT, demarcation, invoicing and contract scope</p>
+      </article>
+    
+
+      <article class="capability-item reveal">
+        <div class="capability-heading">
+          <h3>Supplier consolidation</h3>
+          <strong>3</strong>
+        </div>
+        <div class="capability-bar" aria-hidden="true"><span style="width:20.0%"></span></div>
+        <p>Security, office supplies and contingent workforce</p>
+      </article>
+    
+
+      <article class="capability-item reveal">
+        <div class="capability-heading">
+          <h3>Demand management</h3>
+          <strong>4</strong>
+        </div>
+        <div class="capability-bar" aria-hidden="true"><span style="width:26.7%"></span></div>
+        <p>Mops, cleaning, licenses and assortment</p>
+      </article>
+    
+
+      <article class="capability-item reveal">
+        <div class="capability-heading">
+          <h3>Stakeholder and change management</h3>
+          <strong>8</strong>
+        </div>
+        <div class="capability-bar" aria-hidden="true"><span style="width:53.3%"></span></div>
+        <p>Working groups, executive steering committees, suppliers and users</p>
+      </article>
+    
+
+      <article class="capability-item reveal">
+        <div class="capability-heading">
+          <h3>Lean / Gemba / Brown paper</h3>
+          <strong>2</strong>
+        </div>
+        <div class="capability-bar" aria-hidden="true"><span style="width:13.3%"></span></div>
+        <p>Cleanrooms and building maintenance</p>
+      </article>
+    
+
+      <article class="capability-item reveal">
+        <div class="capability-heading">
+          <h3>Legal and tax analysis</h3>
+          <strong>3</strong>
+        </div>
+        <div class="capability-bar" aria-hidden="true"><span style="width:20.0%"></span></div>
+        <p>Contingent workforce, VAT, liability and false self-employment</p>
+      </article>
+    
+
+      <article class="capability-item reveal">
+        <div class="capability-heading">
+          <h3>Implementation and controls</h3>
+          <strong>12</strong>
+        </div>
+        <div class="capability-bar" aria-hidden="true"><span style="width:80.0%"></span></div>
+        <p>New processes, contracts, dashboards, controls and handover memoranda</p>
+      </article>
+    
+
+      <article class="capability-item reveal">
+        <div class="capability-heading">
+          <h3>Team coaching</h3>
+          <strong>7</strong>
+        </div>
+        <div class="capability-bar" aria-hidden="true"><span style="width:46.7%"></span></div>
+        <p>Direction and coaching of Junior and Medior Consultants</p>
+      </article>
+    
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div>
+        <strong>Anonymized Lean Six Sigma project portfolio</strong>
+        <p>Client names, supplier names and identifying details have been removed. Figures reflect realized and client-validated financial outcomes.</p>
+      </div>
+      <address class="contact-block">
+        <strong>Thomas Spijker</strong>
+        <span>Senior Management Consultant</span>
+        <span>Zaandam, Netherlands</span>
+        <a href="mailto:t.spijker95@gmail.com">t.spijker95@gmail.com</a>
+        <a href="tel:+31653622089">+31 6 5362 2089</a>
+      </address>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const root = document;
+      const projects = [{"id": "p01", "client": "Client A", "sector": "Global life sciences", "project": "Workwear and cleanroom mops", "type": "Demand management / inventory and logistics optimization", "spend": 423232, "impact": 149118, "saving": 0.35233158173295026, "impact_type": "Recurring annual savings", "result": "Delivery frequency 3 → 2 per week; inventory -27%.", "role": "Responsible for the analysis and execution as a consultant, working with a Senior Consultant for subject-matter alignment and support when required.", "status": "Implemented, fully realized and client-validated.", "challenge": "Cleanroom mop inventory and delivery frequency were not aligned with actual consumption, cleanroom types, cleaning frequencies and the rotation required for transport and laundering.", "approach": "Excel data analysis, Gemba walk, interviews with users and the supplier, and analysis of inventory, consumption and logistics movements.", "solution": "Delivery frequency was reduced from three to two transport movements per week. Mop inventory was reduced by 27% and aligned with actual consumption and the operational rotation cycle.", "categories": ["Demand management"]}, {"id": "p02", "client": "Client B", "sector": "Mental health care", "project": "Contingent workforce – Care", "type": "Strategic sourcing / process redesign / compliance", "spend": 18389773, "impact": 753503, "saving": 0.040974023986049206, "impact_type": "Recurring annual savings", "result": "Standardized rates, increased contract coverage and a transparent, automated requisition process.", "role": "Led the end-to-end tender process: analysis, requirements definition, market request, supplier assessment, negotiations, contracting and implementation. Client needs were translated into requirements and award criteria through a multidisciplinary working group. Decisions were made by a steering committee with divisional directors; senior support was available for complex matters.", "status": "Implemented, fully realized and client-validated.", "challenge": "The contingent workforce was fragmented across many suppliers. Rates and shift allowances varied, contract coverage was often missing and the requisition process lacked structure.", "approach": "Excel data analysis, process analysis, flowcharts, tendering, contract and rate negotiations, rate standardization and implementation support.", "solution": "A new flexible workforce model and structured requisition process were implemented. Shifts are offered internally first and then released externally according to a defined supplier sequence. Rates and contractual conditions were standardized and formalized.", "categories": ["Strategic sourcing", "Process optimization"]}, {"id": "p03", "client": "Client B", "sector": "Mental health care", "project": "Contingent workforce – Security", "type": "Supplier consolidation / tender / rate optimization", "spend": 2137707, "impact": 289201, "saving": 0.13528561210680415, "impact_type": "Recurring annual savings", "result": "Supplier base 3 → 2; improved rate transparency and scale benefits.", "role": "Led the full tender process, financial comparison and commercial negotiations. Requirements were aligned through the working group and the final proposal was submitted to the steering committee for decision.", "status": "Implemented, fully realized and client-validated.", "challenge": "Three suppliers provided comparable security services, while rate structures and shift allowances were insufficiently transparent. Fragmented volume limited scale and negotiation leverage.", "approach": "Excel data analysis, weighted rate analysis including deployment times and allowances, tendering, supplier comparison and contract and rate negotiations.", "solution": "The supplier base was consolidated from three to two providers. Sharper and more transparent rates were negotiated and implemented with the selected suppliers.", "categories": ["Strategic sourcing"]}, {"id": "p04", "client": "Client C", "sector": "Disability care", "project": "Medical equipment", "type": "Strategic sourcing / managed-service design / assortment standardization", "spend": 909155, "impact": 201172, "saving": 0.2212736002111851, "impact_type": "Recurring annual savings", "result": "Availability secured, one fixed fee and a standardized core assortment.", "role": "Led the end-to-end tender and service-design process, in coordination with a multidisciplinary working group and a steering committee with divisional directors.", "status": "Implemented, fully realized and client-validated.", "challenge": "Two suppliers provided comparable services under unfavorable conditions. Responsibility for maintenance and availability of medical equipment was insufficiently clear.", "approach": "Tendering, supplier comparison, total cost of ownership analysis, process design, financial model and development of a core assortment.", "solution": "A preferred supplier was contracted under a fixed-fee model. The supplier guarantees availability and can optimize the use of new, refurbished and available rental equipment. The model is based on a standardized core assortment.", "categories": ["Strategic sourcing", "Operating model"]}, {"id": "p05", "client": "Client C", "sector": "Disability care", "project": "Office supplies", "type": "Tail-spend consolidation / procure-to-pay optimization", "spend": 507297, "impact": 147130, "saving": 0.29002734098565536, "impact_type": "Recurring annual savings", "result": "Suppliers 65 → 1; invoices approximately 14,000 → 12 per year.", "role": "Coached a Junior Consultant through the full engagement. Worked hands-on, set priorities, directed the approach and remained accountable for quality, progress and results.", "status": "Implemented, fully realized and client-validated.", "challenge": "Purchasing was fragmented across many small suppliers. This limited volume leverage and created a high volume of low-value invoices for Finance.", "approach": "Excel data analysis, tail-spend analysis, invoice analysis, supplier consolidation and analysis of administrative process costs.", "solution": "Tail suppliers were consolidated into one provider. Prices were reduced and ordering, quality and assortment were centralized and standardized.", "categories": ["Commercial optimization"]}, {"id": "p06", "client": "Client C", "sector": "Disability care", "project": "Transport claims", "type": "Process optimization / revenue assurance / data controls", "spend": 3027307, "impact": 239338, "saving": 0.07905970554027061, "impact_type": "Recurring annual savings", "result": "Approximately 700–800 annual mismatches identified at baseline; recurring mismatch detection and follow-up established.", "role": "Coached a Junior Consultant and remained accountable for the analyses, process design, implementation, quality and final outcome.", "status": "Implemented, fully realized, embedded and client-validated.", "challenge": "Differences arose between clients actually transported, claims submitted and journeys invoiced, both in quantities and claim types.", "approach": "Excel data analysis, Power BI, data reconciliation, flowcharts, stakeholder interviews, process design, implementation and controls.", "solution": "A standardized control and reconciliation process was designed and implemented to identify and correct differences between journeys, claims and invoicing in a timely manner.", "categories": ["Process optimization"]}, {"id": "p07", "client": "Client C", "sector": "Disability care", "project": "Workforce SaaS platform", "type": "Benchmarking / negotiation support", "spend": 387350, "impact": 84250, "saving": 0.21750354976119787, "impact_type": "Recurring annual savings", "result": "Rate gap versus the market benchmark reduced.", "role": "Responsible for the analysis, benchmark and negotiation case. The client chose to conduct the final negotiation directly.", "status": "Savings fully realized and client-validated; final negotiation conducted by the client.", "challenge": "Charges for the deployment of personnel through a workforce SaaS platform exceeded relevant market benchmarks.", "approach": "Benchmark analysis, invoice and rate analysis and preparation of the commercial negotiation.", "solution": "The client used the benchmark, financial case and negotiation scenarios to renegotiate the supplier terms.", "categories": ["Commercial optimization"]}, {"id": "p08", "client": "Client D", "sector": "Specialized care", "project": "Cleaning – VAT compliance", "type": "Contract compliance / tax correction / cash recovery", "spend": null, "impact": 83725, "saving": null, "impact_type": "One-off cash recovery", "result": "VAT treatment 21% → 9% for relevant services; €83,725 recovered.", "role": "Led the analysis, correction and design of the preventive control, supported by a Junior Consultant.", "status": "Fully recovered, embedded and client-validated.", "challenge": "Cleaning services at residential locations were invoiced at 21% VAT, while 9% applied to the relevant part of the service.", "approach": "Excel data analysis, invoice review, contract compliance and tax analysis.", "solution": "Historically overpaid amounts were corrected. A control process was also implemented to monitor the correct VAT treatment on an ongoing basis.", "categories": ["Contract compliance"]}, {"id": "p09", "client": "Client D", "sector": "Specialized care", "project": "Contingent workforce", "type": "Strategic sourcing / workforce process / legal and tax compliance", "spend": 14146880, "impact": 3423467, "saving": 0.24199448924427153, "impact_type": "Recurring annual savings", "result": "Fill rate 70% → 88%; sharper rates, increased contract coverage and improved compliance.", "role": "Segment Lead with end-to-end accountability for the analysis, tender, commercial and legal negotiations, implementation and controls. A Junior Consultant supported delivery; I directed the work and monitored quality and progress. Specific legal matters were aligned with external counsel, and the Managing Consultant was available for escalation or sparring when required.", "status": "Implemented, fully realized, embedded and client-validated.", "challenge": "The organization used approximately 12 to 15 suppliers across a broad range of roles and rates. The hiring process lacked transparency and shifts were regularly left unfilled, incorrectly filled or duplicated.", "approach": "Excel data analysis, flowcharts, process analysis, tendering, contract and rate negotiations, legal and tax analysis, stakeholder management and change management.", "solution": "Rates and contractual terms were tightened and standardized. The full workforce process was redesigned, implemented and embedded, including legal provisions on liability, tax treatment and false self-employment risk.", "categories": ["Strategic sourcing", "Process optimization", "Contract compliance"]}, {"id": "p10", "client": "Client E", "sector": "Corporate organization", "project": "IT licenses", "type": "Software asset management / demand management / rate optimization", "spend": 2532813, "impact": 160149, "saving": 0.06322969757340949, "impact_type": "Recurring annual savings", "result": "License buffer reduced, lifecycle process improved and unused licenses removed.", "role": "End-to-end accountable for the analysis, clean-up of unused and incorrectly assigned licenses, process redesign and commercial negotiations, including implementation and controls.", "status": "Implemented, fully realized, embedded and client-validated.", "challenge": "Licenses were not always assigned correctly, including to former employees. An unnecessarily large license buffer was also maintained.", "approach": "Excel data analysis, license utilization analysis, stakeholder interviews, process analysis and rate negotiation.", "solution": "Unused and incorrectly assigned licenses were removed. The required buffer was recalculated, the joiner-mover-leaver process was tightened and improved rates were agreed.", "categories": ["Demand management"]}, {"id": "p11", "client": "Client E", "sector": "Corporate organization", "project": "Marketing and advisory spend", "type": "Make-or-buy analysis / external workforce rationalization", "spend": 2918791, "impact": 212500, "saving": 0.07280411649892027, "impact_type": "Recurring annual savings", "result": "External deployment reduced and internal continuity secured.", "role": "Fully accountable for the analyses, business case, preparation of the decision and implementation, including reduction of external capacity, transfer of activities and design of the required internal capacity.", "status": "Implemented, fully realized and client-validated.", "challenge": "There was substantial overlap between work performed by external marketing and advisory resources and activities already or potentially performed internally.", "approach": "Excel data analysis, activity analysis, make-or-buy analysis, stakeholder interviews and capacity analysis.", "solution": "External activities were selectively scaled down and transferred internally. Targeted recruitment was used where structural capacity was required to maintain continuity.", "categories": ["Operating model"]}, {"id": "p12", "client": "Client E", "sector": "Corporate organization", "project": "Cleaning", "type": "Demand management / service-level optimization", "spend": 692826, "impact": 103911, "saving": 0.14998138060638602, "impact_type": "Recurring annual savings", "result": "Cleaning frequency 5 → 3 times per week.", "role": "Accountable for the analysis, business case, preparation of the decision, supplier alignment and implementation of the revised service level.", "status": "Implemented, fully realized and client-validated.", "challenge": "Cleaning contracts had not been reviewed for approximately ten years. Offices were cleaned five days per week, while occupancy was below 20% on certain days due to hybrid working.", "approach": "Excel data analysis, occupancy analysis, stakeholder interviews, business case and service-level redesign.", "solution": "Regular cleaning frequency was aligned with actual use and reduced from five to three times per week.", "categories": ["Demand management"]}, {"id": "p13", "client": "Client F", "sector": "Elderly care", "project": "Rent and building maintenance – demarcation", "type": "Contract compliance / demarcation analysis / cash recovery", "spend": null, "impact": 108305, "saving": null, "impact_type": "One-off cash recovery", "result": "€108,305 of incorrectly charged costs recovered.", "role": "End-to-end accountable for the analysis, invoice review, case-file development and recovery process, including discussions with internal stakeholders and the property owner.", "status": "Fully recovered and client-validated.", "challenge": "Building maintenance activities had been charged to the tenant even though the lease demarcation assigned these costs to the property owner.", "approach": "Excel data analysis, contract compliance, demarcation analysis, invoice review, case-file development and stakeholder discussions.", "solution": "Incorrectly charged costs were challenged and recovered from the owner using contractual substantiation and supporting evidence.", "categories": ["Contract compliance"]}, {"id": "p14", "client": "Client F", "sector": "Elderly care", "project": "IT service provision", "type": "Scope optimization / service-model analysis / make-or-buy", "spend": 867537, "impact": 64578, "saving": 0.07443832366803951, "impact_type": "Recurring annual savings", "result": "Fixed fee replaced by payment per ticket; baseline approximately €208 per resolved ticket.", "role": "Fully accountable for the analysis, redesign of the service and negotiations on scope, rates and contractual terms.", "status": "Implemented, fully realized and client-validated.", "challenge": "There was overlap between contracted IT services and activities performed internally. The supplier charged a fixed fee regardless of actual usage.", "approach": "Excel data analysis, contract and scope analysis, ticket analysis, stakeholder interviews and make-or-buy analysis.", "solution": "Overlapping services were removed from scope. The fixed-fee model was replaced by a per-ticket payment model so that costs better reflect actual usage.", "categories": ["Operating model"]}, {"id": "p15", "client": "Client F", "sector": "Elderly care", "project": "Food", "type": "Assortment rationalization / strategic sourcing / change management", "spend": 3745650, "impact": 362644, "saving": 0.09681737482145956, "impact_type": "Recurring annual savings", "result": "Assortment approximately 4,600 → 1,000 items. Savings mix: approximately 30% pack-size changes, 40% A-to-B brand substitution and 30% price.", "role": "Project Lead with end-to-end accountability for the analysis, working-group governance, development and implementation of the core assortment, change management and supplier and rate negotiations. Junior and Medior Consultants supported delivery; I allocated work and monitored quality, progress and results.", "status": "Implemented, monitored, fully realized and client-validated.", "challenge": "The food assortment was very broad and largely unstandardized. Locations purchased different product types and quality levels, limiting scale benefits and control.", "approach": "Excel data analysis, assortment analysis, working groups, stakeholder and change management, and supplier and rate negotiations.", "solution": "A core assortment was developed with users, implemented, monitored and refined. The number of products was reduced from approximately 4,600 to 1,000 and the concentrated purchasing base was used in supplier negotiations.", "categories": ["Strategic sourcing"]}, {"id": "p16", "client": "Client F", "sector": "Elderly care", "project": "Rent and building maintenance – process optimization", "type": "Lean process optimization / First Time Right", "spend": null, "impact": 244231, "saving": null, "impact_type": "Recurring annual savings", "result": "First Time Right 44.5% → 78%, exceeding the 75% target.", "role": "End-to-end accountable for the complete improvement engagement: facilitation of brown-paper sessions, analysis, process design, implementation and controls. Junior and Medior Consultants supported delivery; I directed the work and monitored progress and quality.", "status": "Implemented, fully realized, embedded and client-validated.", "challenge": "The maintenance supplier required many repeat visits to resolve issues, creating additional costs and lost time for employees supporting supplier visits.", "approach": "Brown-paper sessions, Excel data analysis, process analysis, root-cause analysis and stakeholder and supplier management.", "solution": "A new request process was designed so users provide more complete information on what is required at the location. Waste was removed with the supplier and preparation for site visits was improved.", "categories": ["Process optimization"]}, {"id": "p17", "client": "Client F", "sector": "Elderly care", "project": "Transport claims", "type": "Process optimization / revenue assurance / data controls", "spend": 993761, "impact": 65000, "saving": 0.06540808101746798, "impact_type": "Recurring annual savings", "result": "Recurring mismatch detection, follow-up and ownership established.", "role": "End-to-end accountable for data analysis, reconciliation, process analysis, design, implementation and controls. Junior and Medior Consultants supported delivery; I remained accountable for quality and the final outcome.", "status": "Implemented, fully realized, embedded and client-validated.", "challenge": "Differences arose between clients actually transported, claims submitted and journeys invoiced, both in quantities and claim types.", "approach": "Excel data analysis, Power BI, data reconciliation, flowcharts, stakeholder interviews, process design, implementation and controls.", "solution": "A standardized control and reconciliation process was designed and implemented to identify, correct and periodically monitor differences.", "categories": ["Process optimization"]}];
+      const grid = root.getElementById('projectGrid');
+      const search = root.getElementById('searchInput');
+      const clientFilter = root.getElementById('clientFilter');
+      const categoryFilter = root.getElementById('categoryFilter');
+      const sortSelect = root.getElementById('sortSelect');
+      const resultsMeta = root.getElementById('resultsMeta');
+
+      const euro = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'EUR',
+        maximumFractionDigits: 0
+      });
+      const percent = new Intl.NumberFormat('en-US', {
+        style: 'percent',
+        maximumFractionDigits: 1
+      });
+
+      const escapeHTML = (value) => String(value ?? '').replace(/[&<>"']/g, char => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+      }[char]));
+
+      const clients = [...new Map(projects.map(p => [p.client, p])).values()]
+        .sort((a, b) => a.client.localeCompare(b.client));
+      clients.forEach(p => {
+        const option = document.createElement('option');
+        option.value = p.client;
+        option.textContent = `${p.client} · ${p.sector}`;
+        clientFilter.appendChild(option);
+      });
+
+      const categories = [...new Set(projects.flatMap(p => p.categories))].sort();
+      categories.forEach(category => {
+        const option = document.createElement('option');
+        option.value = category;
+        option.textContent = category;
+        categoryFilter.appendChild(option);
+      });
+
+      function cardHTML(p) {
+        const saving = p.saving == null ? '—' : percent.format(p.saving);
+        const spend = p.spend == null ? '—' : euro.format(p.spend);
+        const tags = [
+          ...p.categories.map(c => `<span class="tag">${escapeHTML(c)}</span>`),
+          `<span class="tag gold">${escapeHTML(p.impact_type)}</span>`
+        ].join('');
+
+        return `
+          <article class="project-card">
+            <div class="project-main">
+              <div class="project-top">
+                <div>
+                  <p class="eyebrow">${escapeHTML(p.client)} · ${escapeHTML(p.sector)}</p>
+                  <h3>${escapeHTML(p.project)}</h3>
+                </div>
+                <div class="money">${euro.format(p.impact)}</div>
+              </div>
+              <div class="tags">${tags}</div>
+              <p class="project-result">${escapeHTML(p.result)}</p>
+            </div>
+            <div class="project-data">
+              <div><span>Spend baseline</span><strong>${spend}</strong></div>
+              <div><span>Savings</span><strong>${saving}</strong></div>
+              <div><span>Project type</span><strong>${escapeHTML(p.type.split('/')[0].trim())}</strong></div>
+            </div>
+            <details>
+              <summary>Open case details</summary>
+              <div class="detail-body">
+                <div><h4>Challenge</h4><p>${escapeHTML(p.challenge)}</p></div>
+                <div><h4>Approach &amp; tools</h4><p>${escapeHTML(p.approach)}</p></div>
+                <div><h4>Role / leadership</h4><p>${escapeHTML(p.role)}</p></div>
+                <div><h4>Implemented solution</h4><p>${escapeHTML(p.solution)}</p></div>
+                <div><h4>Status / validation</h4><p>${escapeHTML(p.status)}</p></div>
+              </div>
+            </details>
+          </article>`;
+      }
+
+      function render() {
+        const query = search.value.trim().toLowerCase();
+        const client = clientFilter.value;
+        const category = categoryFilter.value;
+        const sort = sortSelect.value;
+
+        let filtered = projects.filter(p => {
+          const haystack = [
+            p.client, p.sector, p.project, p.type, p.result, p.role,
+            p.challenge, p.approach, p.solution, ...p.categories
+          ].join(' ').toLowerCase();
+          return (!query || haystack.includes(query))
+            && (!client || p.client === client)
+            && (!category || p.categories.includes(category));
+        });
+
+        filtered.sort((a, b) => {
+          if (sort === 'impact-asc') return a.impact - b.impact;
+          if (sort === 'saving-desc') return (b.saving ?? -1) - (a.saving ?? -1);
+          if (sort === 'project-asc') return a.project.localeCompare(b.project);
+          return b.impact - a.impact;
+        });
+
+        resultsMeta.textContent = `${filtered.length} of ${projects.length} projects`;
+        grid.innerHTML = filtered.length
+          ? filtered.map(cardHTML).join('')
+          : '<div class="empty-state">No projects match the selected filters.</div>';
+      }
+
+      [search, clientFilter, categoryFilter, sortSelect].forEach(control => {
+        control.addEventListener(control === search ? 'input' : 'change', render);
+      });
+      render();
+
+      root.getElementById('printButton').addEventListener('click', () => window.print());
+
+      // Progressive reveal, with a static fallback.
+      const revealItems = [...root.querySelectorAll('.reveal')];
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .08 });
+        revealItems.forEach(item => observer.observe(item));
+      } else {
+        revealItems.forEach(item => item.classList.add('visible'));
+      }
+
+      // Section-aware navigation.
+      const sections = [...root.querySelectorAll('main section[id]')];
+      const navLinks = [...root.querySelectorAll('.nav-links a')];
+      if ('IntersectionObserver' in window) {
+        const sectionObserver = new IntersectionObserver(entries => {
+          const visible = entries
+            .filter(e => e.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+          if (!visible) return;
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${visible.target.id}`);
+          });
+        }, { rootMargin: '-20% 0px -68% 0px', threshold: [0, .2, .5] });
+        sections.forEach(section => sectionObserver.observe(section));
+      }
+    })();
+  </script>
+</body>
+</html>
