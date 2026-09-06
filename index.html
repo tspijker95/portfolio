@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An anonymized Lean Six Sigma project portfolio covering 17 improvement engagements and €6.69m in realized and client-validated impact.">
+  <title>Lean Six Sigma Project Portfolio — Thomas Spijker</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23d6a84b'/%3E%3Ctext x='32' y='43' font-family='Arial' font-size='26' font-weight='800' text-anchor='middle' fill='%23102a43'%3ETS%3C/text%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Thomas Spijker — Lean Six Sigma Project Portfolio">
+  <meta property="og:description" content="17 improvement engagements, €51.7m analyzed spend, €6.69m realized and client-validated impact.">
+  <meta property="og:url" content="https://tspijker95.github.io/portfolio/">
+  <meta name="twitter:card" content="summary">
+  <style>
+    :root {
+      --ink:#102a43;
+      --ink-2:#243b53;
+      --muted:#627d98;
+      --paper:#fff;
+      --canvas:#f4f7f9;
+      --canvas-2:#edf3f5;
+      --teal:#147d7e;
+      --teal-dark:#0d5f61;
+      --teal-soft:#dceeee;
+      --gold:#d6a84b;
+      --gold-soft:#f6ecd3;
+      --shadow:0 1px 2px rgba(16,42,67,.05);
+      --radius:10px;
+      --max:1180px;
+      --serif:Charter,"Iowan Old Style",Georgia,"Times New Roman",serif;
+      --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink-2);background:var(--canvas);font-family:var(--sans);line-height:1.55;text-rendering:optimizeLegibility}
+    a{color:inherit}
+    button,input,select{font:inherit}
+    button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid rgba(20,125,126,.35);outline-offset:3px}
+    .shell{width:min(var(--max),calc(100% - 40px));margin:0 auto}
+    .section{padding:82px 0}
+    .section.alt{background:var(--canvas-2)}
+    .section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,430px);gap:42px;align-items:end;margin-bottom:36px}
+    .section-head h2,.hero h1,.case-title{font-family:var(--serif)}
+    .section-head h2{margin:0;color:var(--ink);font-size:clamp(2rem,4vw,3.25rem);line-height:1.02;letter-spacing:-.035em}
+    .section-head p{margin:0;color:var(--muted);font-size:1.02rem}
+    .skip-link{position:absolute;left:12px;top:-70px;z-index:100;padding:10px 14px;color:white;background:var(--ink);border-radius:8px}
+    .skip-link:focus{top:12px}
+
+    .site-nav{position:sticky;top:0;z-index:50;color:white;background:rgba(16,42,67,.97);backdrop-filter:blur(12px)}
+    .nav-inner{min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800}
+    .brand-mark{width:34px;height:34px;display:grid;place-items:center;color:var(--ink);background:var(--gold);border-radius:9px;font-size:.78rem;font-weight:900}
+    .nav-links{display:flex;align-items:center;gap:20px}
+    .nav-links>a{color:rgba(255,255,255,.75);text-decoration:none;font-size:.88rem;font-weight:700}
+    .nav-links>a:hover,.nav-links>a.active{color:#fff}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .language-switch{display:flex;background:rgba(255,255,255,.08);border-radius:9px;padding:3px}
+    .language-option{min-width:38px;min-height:34px;border:0;border-radius:7px;color:rgba(255,255,255,.72);background:transparent;cursor:pointer;font-weight:800}
+    .language-option.active{color:var(--ink);background:white}
+    .print-btn{min-height:40px;padding:0 14px;color:white;background:transparent;border:1px solid rgba(255,255,255,.28);border-radius:9px;cursor:pointer}
+
+    .hero{color:white;background:radial-gradient(circle at 83% 16%,rgba(214,168,75,.24),transparent 27%),linear-gradient(135deg,#102a43 0%,#102a43 60%,#153e59 100%);padding:92px 0 78px}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(315px,.65fr);gap:62px;align-items:end}
+    .hero h1{max-width:760px;margin:0;font-size:clamp(3rem,6vw,4.5rem);line-height:.96;letter-spacing:-.05em}
+    .hero-byline{margin:20px 0 0;color:#f1cf84;font-size:.92rem;font-weight:700}
+    .hero .lead{max-width:740px;margin:20px 0 0;color:rgba(255,255,255,.76);font-size:clamp(1.05rem,2vw,1.28rem)}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}
+    .hero-meta span{padding:7px 11px;color:rgba(255,255,255,.9);background:rgba(255,255,255,.08);border-radius:999px;font-size:.83rem;font-weight:700}
+    .hero-side{padding:26px;background:rgba(255,255,255,.08);border-radius:var(--radius)}
+    .hero-side h2{margin:0 0 19px;font:700 .88rem/1.2 var(--sans);color:rgba(255,255,255,.9)}
+    .hero-side dl{display:grid;grid-template-columns:1fr auto;gap:13px 18px;margin:0}
+    .hero-side dt{color:rgba(255,255,255,.65)}
+    .hero-side dd{margin:0;max-width:220px;color:white;font-weight:700;text-align:right}
+
+    .kpi-section{position:relative;z-index:3;margin-top:-30px}
+    .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:white;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .kpi{padding:24px 25px 26px}
+    .kpi span{display:block;color:var(--muted);font-size:.82rem;font-weight:700}
+    .kpi strong{display:block;margin-top:7px;color:var(--ink);font-size:clamp(1.85rem,3vw,2.55rem);line-height:1;font-family:var(--sans);letter-spacing:-.035em}
+    .kpi small{display:block;margin-top:8px;color:var(--muted)}
+
+    .impact-card{background:white;border-radius:var(--radius);box-shadow:var(--shadow);padding:34px}
+    .impact-realized{display:flex;justify-content:space-between;gap:24px;align-items:flex-end}
+    .impact-realized h3{margin:0;color:var(--ink);font-size:clamp(1.55rem,3vw,2.35rem);line-height:1.08;letter-spacing:-.035em}
+    .impact-realized p{margin:0;color:var(--muted);max-width:520px;text-align:right}
+    .proportion-bar{display:flex;gap:2px;height:12px;margin-top:26px;background:white;border-radius:3px;overflow:hidden}
+    .segment{min-width:2px}
+    .seg-realized{background:var(--teal-dark)}
+    .seg-oneoff{background:var(--gold)}
+    .seg-potential{background:#97a9b8}
+    .proportion-labels{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:14px}
+    .proportion-labels strong{display:block;color:var(--ink);font-size:1rem}
+    .proportion-labels span{display:block;color:var(--muted);font-size:.82rem;margin-top:3px}
+    .client-impact{margin-top:42px}
+    .client-impact-head{display:flex;justify-content:space-between;gap:24px;align-items:baseline;margin-bottom:18px}
+    .client-impact-head h3{margin:0;color:var(--ink);font-size:1.25rem}
+    .client-impact-head p{margin:0;color:var(--muted);font-size:.86rem}
+    .impact-list{display:grid;gap:15px}
+    .impact-row-head{display:flex;justify-content:space-between;gap:18px;margin-bottom:6px;font-size:.91rem}
+    .impact-row-head span{color:var(--ink-2)}
+    .impact-row-head strong{color:var(--ink)}
+    .impact-track{height:8px;background:#e5edf1;border-radius:999px;overflow:hidden}
+    .impact-fill{height:100%;background:var(--teal);border-radius:999px}
+    .facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:38px}
+    .fact{min-width:0}
+    .fact strong{display:block;color:var(--ink);font-size:clamp(1.55rem,2.6vw,2.2rem);line-height:1.05;letter-spacing:-.035em}
+    .fact span{display:block;margin-top:7px;color:var(--muted);font-size:.88rem}
+
+    .feature-list{display:grid;gap:24px}
+    .case-feature{padding:36px;background:white;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .case-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:start}
+    .case-theme{margin:0 0 8px;color:var(--teal);font-size:.83rem;font-weight:700}
+    .case-title{margin:0;color:var(--ink);font-size:clamp(1.65rem,3vw,2.3rem);line-height:1.05;letter-spacing:-.025em}
+    .case-meta{margin:7px 0 0;color:var(--muted);font-size:.9rem}
+    .case-impact{text-align:right}
+    .case-impact strong{display:block;color:var(--ink);font-size:1.55rem;letter-spacing:-.035em}
+    .case-impact span{display:block;margin-top:4px;max-width:220px;color:var(--muted);font-size:.78rem}
+    .case-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:28px;align-items:stretch}
+    .case-col{padding:0}
+    .case-col.result{padding:20px;background:var(--teal-soft);border-radius:8px}
+    .case-col h4{margin:0 0 8px;color:var(--ink);font-size:.88rem}
+    .case-col p{margin:0;color:var(--ink-2);font-size:.93rem}
+
+    .methods-list{max-width:780px;display:grid;gap:5px}
+    .method-row{display:grid;grid-template-columns:minmax(0,1fr) 210px 38px;gap:18px;align-items:center;min-height:48px}
+    .method-copy{min-width:0}
+    .method-copy strong{display:block;color:var(--ink);font-size:.94rem}
+    .method-copy span{display:block;color:var(--muted);font-size:.8rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .method-track{height:8px;background:#dfe8ec;border-radius:999px;overflow:hidden}
+    .method-fill{height:100%;background:var(--teal);border-radius:999px}
+    .method-count{color:var(--ink);font-weight:800;text-align:right}
+
+    .library-controls{display:grid;grid-template-columns:1.4fr .8fr .9fr .9fr;gap:12px;margin-bottom:14px}
+    .control{width:100%;min-height:44px;padding:0 12px;color:var(--ink-2);background:white;border:1px solid #c7d3dc;border-radius:8px}
+    .results-meta{margin:0 0 18px;color:var(--muted);font-size:.88rem}
+    .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .project-card{background:white;border-radius:var(--radius);box-shadow:var(--shadow);padding:25px}
+    .project-top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:start}
+    .project-card h3{margin:0;color:var(--ink);font-size:1.18rem;line-height:1.2}
+    .project-client{margin:5px 0 0;color:var(--muted);font-size:.83rem}
+    .project-impact{color:var(--ink);font-size:1.18rem;font-weight:800;text-align:right}
+    .project-line{margin:15px 0 0;color:var(--muted);font-size:.82rem}
+    .project-data{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .project-data span{display:block;color:var(--muted);font-size:.75rem;font-weight:700}
+    .project-data strong{display:block;margin-top:4px;color:var(--ink);font-size:.9rem}
+    details{margin-top:18px;background:#f6f9fa;border-radius:8px;padding:0 15px}
+    summary{padding:13px 0;cursor:pointer;color:var(--teal-dark);font-weight:700;font-size:.88rem}
+    .detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;padding:2px 0 16px}
+    .detail-block h4{margin:0 0 6px;color:var(--ink);font-size:.82rem}
+    .detail-block p{margin:0;color:var(--ink-2);font-size:.86rem}
+    .show-all-wrap{display:flex;justify-content:center;margin-top:24px}
+    .show-all{min-height:46px;padding:0 20px;border:0;border-radius:8px;color:white;background:var(--ink);font-weight:800;cursor:pointer}
+    [hidden]{display:none!important}
+
+    footer{padding:42px 0;color:rgba(255,255,255,.76);background:var(--ink)}
+    .footer-grid{display:flex;justify-content:space-between;gap:36px;align-items:flex-start}
+    footer strong{color:#fff}
+    footer p{max-width:700px;margin:6px 0 0}
+    footer a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+    .footer-person{display:grid;gap:2px;text-align:right}
+
+    @media (max-width:900px){
+      .nav-links>a{display:none}
+      .hero-grid,.section-head{grid-template-columns:1fr}
+      .hero-grid{gap:38px}
+      .hero-side{max-width:620px}
+      .kpi-grid,.facts-grid{grid-template-columns:repeat(2,1fr)}
+      .case-columns{grid-template-columns:1fr}
+      .case-col.result{padding:18px}
+      .library-controls{grid-template-columns:1fr 1fr}
+      .method-row{grid-template-columns:minmax(0,1fr) 150px 34px}
+    }
+    @media (max-width:640px){
+      .shell{width:min(var(--max),calc(100% - 28px))}
+      .section{padding:64px 0}
+      .nav-inner{min-height:60px}
+      .brand span:last-child{display:none}
+      .print-btn{display:none}
+      .hero{padding:68px 0 58px}
+      .hero h1{font-size:clamp(2.7rem,13vw,3.65rem)}
+      .hero-side dl{grid-template-columns:1fr}
+      .hero-side dd{text-align:left;max-width:none;margin-top:-7px}
+      .kpi-section{margin-top:0;padding-top:14px}
+      .kpi-grid,.facts-grid,.project-grid{grid-template-columns:1fr}
+      .impact-card,.case-feature,.project-card{padding:22px}
+      .impact-realized,.client-impact-head,.case-head,.footer-grid{display:block}
+      .impact-realized p,.client-impact-head p{text-align:left;margin-top:9px}
+      .proportion-labels{grid-template-columns:1fr;gap:10px}
+      .case-impact{text-align:left;margin-top:14px}
+      .method-row{grid-template-columns:minmax(0,1fr) 70px 30px;gap:10px}
+      .method-copy span{display:none}
+      .library-controls{grid-template-columns:1fr}
+      .project-data,.detail-grid{grid-template-columns:1fr}
+      .footer-person{text-align:left;margin-top:20px}
+    }
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+    }
+    @media print{
+      @page{size:A4;margin:12mm}
+      html,body{background:#fff}
+      .site-nav,.show-all-wrap,.library-controls,.results-meta{display:none!important}
+      .hero{padding:24px 0;background:#102a43!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      .hero-grid{grid-template-columns:1.3fr .7fr;gap:26px}
+      .hero h1{font-size:34pt}
+      .hero-side{padding:18px}
+      .kpi-section{margin-top:0;padding-top:10px}
+      .section{padding:28px 0}
+      .section.alt{background:#f4f7f9!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      .section-head{margin-bottom:18px}
+      .section-head h2{font-size:23pt}
+      .impact-card,.case-feature,.project-card{box-shadow:none}
+      .feature-list,.project-grid{gap:12px}
+      .case-feature,.project-card,.method-row,.impact-row{break-inside:avoid}
+      .case-feature{padding:20px}
+      .project-grid{grid-template-columns:1fr 1fr}
+      details{background:#f6f9fa!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      .case-col.result{background:#dceeee!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      footer{background:#102a43!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main" id="skipLink">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Portfolio navigation">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top"><span class="brand-mark">TS</span><span id="brandText">Project Portfolio</span></a>
+      <div class="nav-links">
+        <a href="#impact" id="navImpact">Impact</a>
+        <a href="#cases" id="navCases">Selected cases</a>
+        <a href="#methods" id="navMethods">Methods</a>
+        <a href="#library" id="navLibrary">Full library</a>
+        <div class="nav-actions">
+          <div class="language-switch" role="group" aria-label="Language / Taal">
+            <button class="language-option active" type="button" id="langEn" data-lang="en" aria-pressed="true">EN</button>
+            <button class="language-option" type="button" id="langNl" data-lang="nl" aria-pressed="false">NL</button>
+          </div>
+          <button class="print-btn" type="button" id="printButton">Print / Save PDF</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="shell hero-grid">
+      <div>
+        <h1 id="heroTitle">From analysis to implemented impact.</h1>
+        <p class="hero-byline" id="heroByline"></p>
+        <p class="lead" id="heroLead"></p>
+        <div class="hero-meta">
+          <span id="metaYears"></span>
+          <span id="metaImpl"></span>
+          <span id="metaTeam"></span>
+        </div>
+      </div>
+      <aside class="hero-side" aria-labelledby="deliveryTitle">
+        <h2 id="deliveryTitle"></h2>
+        <dl>
+          <dt id="deliveryTypical"></dt><dd id="deliveryMonths"></dd>
+          <dt id="deliveryWorkstreams"></dt><dd>4–5</dd>
+          <dt id="deliveryTeam"></dt><dd id="deliveryConsultants"></dd>
+          <dt id="deliveryGovernance"></dt><dd id="deliveryGovValue"></dd>
+          <dt id="deliveryCommercial"></dt><dd id="deliveryCommercialValue"></dd>
+          <dt id="deliveryValidation"></dt><dd id="deliveryValidated"></dd>
+        </dl>
+      </aside>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="kpi-section" aria-label="Portfolio metrics">
+      <div class="shell">
+        <div class="kpi-grid">
+          <div class="kpi"><span id="kpiProjects"></span><strong id="kpiProjectsValue"></strong><small id="kpiProjectsSub"></small></div>
+          <div class="kpi"><span id="kpiSpend"></span><strong id="kpiSpendValue"></strong><small id="kpiSpendSub"></small></div>
+          <div class="kpi"><span id="kpiImpact"></span><strong id="kpiImpactValue"></strong><small id="kpiImpactSub"></small></div>
+          <div class="kpi"><span id="kpiRate"></span><strong id="kpiRateValue"></strong><small id="kpiRateSub"></small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="impact">
+      <div class="shell">
+        <div class="section-head">
+          <h2 id="impactTitle"></h2>
+          <p id="impactIntro"></p>
+        </div>
+        <article class="impact-card">
+          <div class="impact-realized">
+            <h3 id="realizedHeadline"></h3>
+            <p id="realizedNote"></p>
+          </div>
+          <div class="proportion-bar" role="img" id="proportionBar">
+            <span class="segment seg-realized" id="segRealized"></span>
+            <span class="segment seg-oneoff" id="segOneoff"></span>
+            <span class="segment seg-potential" id="segPotential"></span>
+          </div>
+          <div class="proportion-labels">
+            <div><strong id="realizedRecurringValue"></strong><span id="realizedRecurringLabel"></span></div>
+            <div><strong id="oneOffValue"></strong><span id="oneOffLabel"></span></div>
+            <div><strong id="potentialValue"></strong><span id="potentialLabel"></span></div>
+          </div>
+
+          <div class="client-impact">
+            <div class="client-impact-head"><h3 id="impactClientTitle"></h3><p id="anonNote"></p></div>
+            <div class="impact-list" id="impactList"></div>
+          </div>
+        </article>
+
+        <div class="facts-grid">
+          <div class="fact"><strong id="factValidatedValue"></strong><span id="factValidated"></span></div>
+          <div class="fact"><strong id="factLargestValue"></strong><span id="factLargest"></span></div>
+          <div class="fact"><strong>70% → 88%</strong><span id="factFill"></span></div>
+          <div class="fact"><strong>44.5% → 78%</strong><span id="factFtr"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="cases">
+      <div class="shell">
+        <div class="section-head"><h2 id="casesTitle"></h2><p id="casesIntro"></p></div>
+        <div class="feature-list" id="featureList"></div>
+      </div>
+    </section>
+
+    <section class="section" id="methods">
+      <div class="shell">
+        <div class="section-head"><h2 id="methodsTitle"></h2><p id="methodsIntro"></p></div>
+        <div class="methods-list" id="methodsList"></div>
+      </div>
+    </section>
+
+    <section class="section alt" id="library">
+      <div class="shell">
+        <div class="section-head"><h2 id="libraryTitle"></h2><p id="libraryIntro"></p></div>
+        <div class="library-controls" id="libraryControls" hidden>
+          <input class="control" id="searchInput" type="search" aria-label="Search projects">
+          <select class="control" id="clientFilter" aria-label="Filter by client"></select>
+          <select class="control" id="categoryFilter" aria-label="Filter by intervention"></select>
+          <select class="control" id="sortSelect" aria-label="Sort projects"></select>
+        </div>
+        <p class="results-meta" id="resultsMeta" aria-live="polite" hidden></p>
+        <div class="project-grid" id="projectGrid"></div>
+        <div class="show-all-wrap" id="showAllWrap">
+          <button class="show-all" type="button" id="showAllButton" aria-expanded="false" aria-controls="projectGrid"></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div><strong id="footerTitle"></strong><p id="footerText"></p></div>
+      <div class="footer-person"><strong>Thomas Spijker</strong><span>Senior Management Consultant</span><span id="location"></span><a href="mailto:t.spijker@hotmail.com">t.spijker@hotmail.com</a></div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      'use strict';
+      const DATA = {"projects":[{"id":"p01","clientCode":"A","sector":{"en":"Global life sciences","nl":"Life sciences"},"project":{"en":"Workwear and cleanroom mops","nl":"Werkkleding en cleanroommops"},"type":{"en":"Demand management / inventory and logistics optimization","nl":"Demand management / voorraad- en logistieke optimalisatie"},"spend":423232,"impact":149118,"saving":0.35233158173295026,"impactType":{"en":"Recurring annual savings","nl":"Structurele jaarbesparing"},"result":{"en":"Delivery frequency 3 → 2 per week; inventory -27%.","nl":"Leverfrequentie 3 → 2 keer per week; voorraad 27% lager."},"role":{"en":"Responsible for the analysis and execution as a consultant, working with a Senior Consultant for subject-matter alignment and support when required.","nl":"Verantwoordelijk voor de analyses en uitvoering. Voor inhoudelijke afstemming en ondersteuning waar nodig werkte ik samen met een senior consultant."},"status":{"en":"Implemented, fully realized and client-validated.","nl":"Volledig geïmplementeerd en gerealiseerd; resultaat door de klant gevalideerd."},"challenge":{"en":"Cleanroom mop inventory and delivery frequency were not aligned with actual consumption, cleanroom types, cleaning frequencies and the rotation required for transport and laundering.","nl":"De voorraad cleanroommops en de leverfrequentie waren niet goed afgestemd op het werkelijke gebruik. Daarbij moest rekening worden gehouden met het type cleanroom, de schoonmaakfrequentie en de extra voorraad die nodig is voor transport en wassen."},"approach":{"en":"Excel data analysis, Gemba walk, interviews with users and the supplier, and analysis of inventory, consumption and logistics movements.","nl":"Excel-analyse van verbruik, voorraad en logistieke bewegingen; Gemba walk; interviews met gebruikers en leverancier."},"solution":{"en":"Delivery frequency was reduced from three to two transport movements per week. Mop inventory was reduced by 27% and aligned with actual consumption and the operational rotation cycle.","nl":"De benodigde voorraad is opnieuw berekend op basis van werkelijk verbruik en roulatie. Daardoor kon de mopvoorraad met 27% omlaag en de leverancier van drie naar twee keer per week leveren."},"categories":{"en":["Demand management"],"nl":["Demand management"]}},{"id":"p02","clientCode":"B","sector":{"en":"Mental health care","nl":"Geestelijke gezondheidszorg"},"project":{"en":"Contingent workforce – Care","nl":"PNIL"},"type":{"en":"Strategic sourcing / process redesign / compliance","nl":"Strategic sourcing / procesherontwerp / compliance"},"spend":18389773,"impact":753503,"saving":0.040974023986049206,"impactType":{"en":"Recurring annual savings","nl":"Structurele jaarbesparing"},"result":{"en":"Standardized rates, increased contract coverage and a transparent, automated requisition process.","nl":"Tarieven gestandaardiseerd, contractdekking verhoogd en het uitvraagproces transparant en geautomatiseerd ingericht."},"role":{"en":"Led the end-to-end tender process: analysis, requirements definition, market request, supplier assessment, negotiations, contracting and implementation. Client needs were translated into requirements and award criteria through a multidisciplinary working group. Decisions were made by a steering committee with divisional directors; senior support was available for complex matters.","nl":"Verantwoordelijk voor de dagelijkse leiding over het volledige tendertraject: van analyse en behoeftebepaling tot marktuitvraag, leveranciersbeoordeling, onderhandelingen, contractering en implementatie. Via een multidisciplinaire werkgroep vertaalde ik de klantwensen naar eisen en gunningscriteria. Besluiten werden genomen in een stuurgroep met directievertegenwoordigers; bij complexe vraagstukken kon ik een senior consultant inschakelen."},"status":{"en":"Implemented, fully realized and client-validated.","nl":"Volledig geïmplementeerd en gerealiseerd; resultaat door de klant gevalideerd."},"challenge":{"en":"The contingent workforce was fragmented across many suppliers. Rates and shift allowances varied, contract coverage was often missing and the requisition process lacked structure.","nl":"De inhuur van personeel niet in loondienst was verdeeld over veel leveranciers. Tarieven en ORT-opslagen liepen uiteen, contractdekking ontbrak regelmatig en het uitvraagproces was ongestructureerd. Hierdoor was er onvoldoende grip op kosten, contracten en inzet."},"approach":{"en":"Excel data analysis, process analysis, flowcharts, tendering, contract and rate negotiations, rate standardization and implementation support.","nl":"Excel-data-analyse; procesanalyse en flowcharts; tender; contract- en tariefonderhandelingen; standaardisatie van de tariefstructuur; implementatiebegeleiding."},"solution":{"en":"A new flexible workforce model and structured requisition process were implemented. Shifts are offered internally first and then released externally according to a defined supplier sequence. Rates and contractual conditions were standardized and formalized.","nl":"Een nieuw uitvraagproces voor de flexibele schil is ingevoerd. Diensten worden eerst intern aangeboden en daarna volgens een vaste leveranciersvolgorde extern uitgezet. Via een geautomatiseerde koppeling met het roostersysteem is zichtbaar welke diensten nog openstaan. Tarieven en contractvoorwaarden zijn gestandaardiseerd en vastgelegd."},"categories":{"en":["Strategic sourcing","Process optimization"],"nl":["Strategic sourcing","Procesoptimalisatie"]}},{"id":"p03","clientCode":"B","sector":{"en":"Mental health care","nl":"Geestelijke gezondheidszorg"},"project":{"en":"Contingent workforce – Security","nl":"PNIL Beveiliging"},"type":{"en":"Supplier consolidation / tender / rate optimization","nl":"Leveranciersconsolidatie / tender / tariefoptimalisatie"},"spend":2137707,"impact":289201,"saving":0.13528561210680415,"impactType":{"en":"Recurring annual savings","nl":"Structurele jaarbesparing"},"result":{"en":"Supplier base 3 → 2; improved rate transparency and scale benefits.","nl":"Leveranciers 3 → 2; transparantere tariefstructuur en meer volume per leverancier."},"role":{"en":"Led the full tender process, financial comparison and commercial negotiations. Requirements were aligned through the working group and the final proposal was submitted to the steering committee for decision.","nl":"Leidde het volledige tendertraject, de financiële vergelijking en de commerciële onderhandelingen. De eisen zijn afgestemd met de werkgroep; het uiteindelijke voorstel is ter besluitvorming voorgelegd aan de stuurgroep."},"status":{"en":"Implemented, fully realized and client-validated.","nl":"Volledig geïmplementeerd en gerealiseerd; resultaat door de klant gevalideerd."},"challenge":{"en":"Three suppliers provided comparable security services, while rate structures and shift allowances were insufficiently transparent. Fragmented volume limited scale and negotiation leverage.","nl":"Drie leveranciers leverden vergelijkbare beveiligingsdiensten, maar door verschillende tariefstructuren en ORT-opslagen was de werkelijke kostprijs lastig vergelijkbaar. Bovendien was het volume over drie partijen verdeeld, waardoor schaalvoordeel verloren ging."},"approach":{"en":"Excel data analysis, weighted rate analysis including deployment times and allowances, tendering, supplier comparison and contract and rate negotiations.","nl":"Excel-data-analyse; berekening van gewogen gemiddelde tarieven inclusief inzetmomenten en toeslagen; tender; leveranciersvergelijking; contract- en tariefonderhandelingen."},"solution":{"en":"The supplier base was consolidated from three to two providers. Sharper and more transparent rates were negotiated and implemented with the selected suppliers.","nl":"Het aantal leveranciers is teruggebracht van drie naar twee. Met de geselecteerde partijen zijn scherpere en transparantere tariefafspraken gemaakt en geïmplementeerd."},"categories":{"en":["Strategic sourcing"],"nl":["Strategic sourcing"]}},{"id":"p04","clientCode":"C","sector":{"en":"Disability care","nl":"Gehandicaptenzorg"},"project":{"en":"Medical equipment","nl":"Medische apparatuur"},"type":{"en":"Strategic sourcing / managed-service design / assortment standardization","nl":"Strategic sourcing / ontwerp dienstverleningsmodel / assortimentsstandaardisatie"},"spend":909155,"impact":201172,"saving":0.2212736002111851,"impactType":{"en":"Recurring annual savings","nl":"Structurele jaarbesparing"},"result":{"en":"Availability secured, one fixed fee and a standardized core assortment.","nl":"Beschikbaarheid geborgd binnen één vastbedragmodel en een gestandaardiseerd kernassortiment."},"role":{"en":"Led the end-to-end tender and service-design process, in coordination with a multidisciplinary working group and a steering committee with divisional directors.","nl":"Verantwoordelijk voor het volledige tender- en ontwerpproces, in afstemming met een multidisciplinaire werkgroep en een stuurgroep met directievertegenwoordigers."},"status":{"en":"Implemented, fully realized and client-validated.","nl":"Volledig geïmplementeerd en gerealiseerd; resultaat door de klant gevalideerd."},"challenge":{"en":"Two suppliers provided comparable services under unfavorable conditions. Responsibility for maintenance and availability of medical equipment was insufficiently clear.","nl":"Twee leveranciers leverden vergelijkbare diensten tegen ongunstige voorwaarden. Daarnaast was niet duidelijk vastgelegd wie verantwoordelijk was voor onderhoud en beschikbaarheid van de medische hulpmiddelen."},"approach":{"en":"Tendering, supplier comparison, total cost of ownership analysis, process design, financial model and development of a core assortment.","nl":"Tender en leveranciersvergelijking; total-cost-of-ownership-analyse; procesontwerp; financieel model; ontwikkeling van een kernassortiment."},"solution":{"en":"A preferred supplier was contracted under a fixed-fee model. The supplier guarantees availability and can optimize the use of new, refurbished and available rental equipment. The model is based on a standardized core assortment.","nl":"Een voorkeursleverancier is gecontracteerd op basis van één vast bedrag. Binnen dat model garandeert de leverancier de benodigde beschikbaarheid en kan deze nieuwe, refurbished en beschikbare huurmiddelen optimaal inzetten. Het model is gebaseerd op een gestandaardiseerd kernassortiment."},"categories":{"en":["Strategic sourcing","Operating model"],"nl":["Strategic sourcing","Organisatiemodel"]}},{"id":"p05","clientCode":"C","sector":{"en":"Disability care","nl":"Gehandicaptenzorg"},"project":{"en":"Office supplies","nl":"Kantoormiddelen"},"type":{"en":"Tail-spend consolidation / procure-to-pay optimization","nl":"Consolidatie tail spend / purchase-to-pay-optimalisatie"},"spend":507297,"impact":147130,"saving":0.29002734098565536,"impactType":{"en":"Recurring annual savings","nl":"Structurele jaarbesparing"},"result":{"en":"Suppliers 65 → 1; invoices approximately 14,000 → 12 per year.","nl":"Leveranciers 65 → 1; facturen circa 14.000 → 12 per jaar."},"role":{"en":"Coached a Junior Consultant through the full engagement. Worked hands-on, set priorities, directed the approach and remained accountable for quality, progress and results.","nl":"Begeleidde een junior consultant gedurende het volledige traject. Ik werkte zelf actief mee, bepaalde de aanpak en prioriteiten en bleef verantwoordelijk voor kwaliteit, voortgang en resultaat."},"status":{"en":"Implemented, fully realized and client-validated.","nl":"Volledig geïmplementeerd en gerealiseerd; resultaat door de klant gevalideerd."},"challenge":{"en":"Purchasing was fragmented across many small suppliers. This limited volume leverage and created a high volume of low-value invoices for Finance.","nl":"De inkoop van kantoormiddelen was versnipperd over 65 kleine leveranciers. Daardoor bleef volumevoordeel onbenut en moest de financiële administratie grote aantallen facturen met lage bedragen verwerken."},"approach":{"en":"Excel data analysis, tail-spend analysis, invoice analysis, supplier consolidation and analysis of administrative process costs.","nl":"Excel-data-analyse; tail-spend-analyse; factuuranalyse; leveranciersconsolidatie; analyse van administratieve proceskosten."},"solution":{"en":"Tail suppliers were consolidated into one provider. Prices were reduced and ordering, quality and assortment were centralized and standardized.","nl":"De 65 staartleveranciers zijn samengebracht bij één leverancier. Naast lagere prijzen zijn het bestelproces, het assortiment en de kwaliteitsafspraken gecentraliseerd en gestandaardiseerd."},"categories":{"en":["Commercial optimization"],"nl":["Commerciële optimalisatie"]}},{"id":"p06","clientCode":"C","sector":{"en":"Disability care","nl":"Gehandicaptenzorg"},"project":{"en":"Transport claims","nl":"Declaraties vervoer"},"type":{"en":"Process optimization / revenue assurance / data controls","nl":"Procesoptimalisatie / declaratiecontrole / datareconciliatie"},"spend":3027307,"impact":239338,"saving":0.07905970554027061,"impactType":{"en":"Recurring annual savings","nl":"Structurele jaarbesparing"},"result":{"en":"Approximately 700–800 annual mismatches identified at baseline; recurring mismatch detection and follow-up established.","nl":"Bij aanvang circa 700–800 mismatches per jaar; structurele controle en opvolging ingericht."},"role":{"en":"Coached a Junior Consultant and remained accountable for the analyses, process design, implementation, quality and final outcome.","nl":"Begeleidde een junior consultant en bleef verantwoordelijk voor de analyses, het procesontwerp, de implementatie, de kwaliteit en het eindresultaat."},"status":{"en":"Implemented, fully realized, embedded and client-validated.","nl":"Volledig geïmplementeerd en gerealiseerd, geborgd en door de klant gevalideerd."},"challenge":{"en":"Differences arose between clients actually transported, claims submitted and journeys invoiced, both in quantities and claim types.","nl":"Tussen daadwerkelijk vervoerde cliënten, ingediende declaraties en gefactureerde ritten kwamen verschillen voor in zowel aantallen als declaratietypen."},"approach":{"en":"Excel data analysis, Power BI, data reconciliation, flowcharts, stakeholder interviews, process design, implementation and controls.","nl":"Data-analyse in Excel en Power BI; datareconciliatie; flowcharts; stakeholderinterviews; procesontwerp; implementatie en borging."},"solution":{"en":"A standardized control and reconciliation process was designed and implemented to identify and correct differences between journeys, claims and invoicing in a timely manner.","nl":"Een gestandaardiseerd controle- en reconciliatieproces is ingericht om verschillen tussen ritten, declaraties en facturatie tijdig te signaleren, te corrigeren en structureel op te volgen."},"categories":{"en":["Process optimization"],"nl":["Procesoptimalisatie"]}},{"id":"p07","clientCode":"C","sector":{"en":"Disability care","nl":"Gehandicaptenzorg"},"project":{"en":"Workforce SaaS platform","nl":"SaaS-platform voor personeelsinhuur"},"type":{"en":"Benchmarking / negotiation support","nl":"Benchmarking / onderhandelingsvoorbereiding"},"spend":387350,"impact":84250,"saving":0.21750354976119787,"impactType":{"en":"Recurring annual savings","nl":"Structurele jaarbesparing"},"result":{"en":"Rate gap versus the market benchmark reduced.","nl":"Tariefverschil ten opzichte van de marktbenchmark verkleind."},"role":{"en":"Responsible for the analysis, benchmark and negotiation case. The client chose to conduct the final negotiation directly.","nl":"Verantwoordelijk voor de analyse, benchmark en onderhandelingsvoorbereiding. De klant koos ervoor de uiteindelijke onderhandeling zelf te voeren."},"status":{"en":"Savings fully realized and client-validated; final negotiation conducted by the client.","nl":"Besparing volledig gerealiseerd en door de klant gevalideerd; de eindonderhandeling is door de klant gevoerd."},"challenge":{"en":"Charges for the deployment of personnel through the workforce SaaS platform exceeded relevant market benchmarks.","nl":"De tarieven voor de inzet van personeel via het SaaS-platform lagen boven relevante marktbenchmarks."},"approach":{"en":"Benchmark analysis, invoice and rate analysis and preparation of the commercial negotiation.","nl":"Benchmarkanalyse; factuur- en tariefanalyse; financiële onderbouwing en voorbereiding van de commerciële onderhandeling."},"solution":{"en":"The client used the benchmark, financial case and negotiation scenarios to renegotiate the supplier terms.","nl":"De klant heeft de benchmark, financiële onderbouwing en onderhandelingsscenario’s gebruikt om de voorwaarden met de leverancier opnieuw uit te onderhandelen."},"categories":{"en":["Commercial optimization"],"nl":["Commerciële optimalisatie"]}},{"id":"p08","clientCode":"D","sector":{"en":"Specialized care","nl":"Specialistische zorg"},"project":{"en":"Cleaning – VAT compliance","nl":"Schoonmaak – btw-correctie"},"type":{"en":"Contract compliance / tax correction / cash recovery","nl":"Contractcompliance / fiscale correctie / terugvordering"},"spend":null,"impact":83725,"saving":null,"impactType":{"en":"One-off cash recovery","nl":"Eenmalige terugvordering"},"result":{"en":"VAT treatment 21% → 9% for relevant services; €83,725 recovered.","nl":"Btw 21% → 9% voor relevante werkzaamheden; €83.725 teruggevorderd."},"role":{"en":"Led the analysis, correction and design of the preventive control, supported by a Junior Consultant.","nl":"Verantwoordelijk voor de analyse en correctie en voor het inrichten van de preventieve controle, ondersteund door een junior consultant."},"status":{"en":"Fully recovered, embedded and client-validated.","nl":"Volledig teruggevorderd, geborgd en door de klant gevalideerd."},"challenge":{"en":"Cleaning services at residential locations were invoiced at 21% VAT, while 9% applied to the relevant part of the service.","nl":"Voor schoonmaakwerkzaamheden op woonlocaties werd 21% btw gefactureerd, terwijl voor het relevante deel van de dienstverlening 9% van toepassing was."},"approach":{"en":"Excel data analysis, invoice review, contract compliance and tax analysis.","nl":"Excel-data-analyse; factuurcontrole; contractcompliance; fiscale analyse."},"solution":{"en":"Historically overpaid amounts were corrected. A control process was also implemented to monitor the correct VAT treatment on an ongoing basis.","nl":"Te veel betaalde btw is teruggevorderd. Daarnaast is een structurele controle ingericht om de juiste btw-behandeling bij toekomstige facturen te bewaken."},"categories":{"en":["Contract compliance"],"nl":["Contractcompliance"]}},{"id":"p09","clientCode":"D","sector":{"en":"Specialized care","nl":"Specialistische zorg"},"project":{"en":"Contingent workforce","nl":"PNIL"},"type":{"en":"Strategic sourcing / workforce process / legal and tax compliance","nl":"Strategic sourcing / inhuurproces / juridische en fiscale compliance"},"spend":14146880,"impact":3423467,"saving":0.24199448924427153,"impactType":{"en":"Recurring annual savings","nl":"Structurele jaarbesparing"},"result":{"en":"Fill rate 70% → 88%; sharper rates, increased contract coverage and improved compliance.","nl":"Invulgraad 70% → 88%; scherpere tarieven, hogere contractdekking en verbeterde compliance."},"role":{"en":"Segment Lead with end-to-end accountability for the analysis, tender, commercial and legal negotiations, implementation and controls. A Junior Consultant supported delivery; I directed the work and monitored quality and progress. Specific legal matters were aligned with external counsel, and the Managing Consultant was available for escalation or sparring when required.","nl":"Segment lead en verantwoordelijk voor het volledige traject: analyse, tender, commerciële en juridische onderhandelingen, implementatie en borging. Een junior consultant ondersteunde mij in de uitvoering; ik gaf inhoudelijk richting en bewaakte kwaliteit en voortgang. Voor specifieke juridische onderwerpen stemde ik af met een advocaat en waar nodig kon ik terugvallen op de managing consultant."},"status":{"en":"Implemented, fully realized, embedded and client-validated.","nl":"Volledig geïmplementeerd en gerealiseerd, geborgd en door de klant gevalideerd."},"challenge":{"en":"The organization used approximately 12 to 15 suppliers across a broad range of roles and rates. The hiring process lacked transparency and shifts were regularly left unfilled, incorrectly filled or duplicated.","nl":"De organisatie werkte met circa 12 tot 15 leveranciers voor uiteenlopende functies en tarieven. Het inhuurproces was onoverzichtelijk en diensten werden regelmatig niet, verkeerd of dubbel ingevuld."},"approach":{"en":"Excel data analysis, flowcharts, process analysis, tendering, contract and rate negotiations, legal and tax analysis, stakeholder management and change management.","nl":"Excel-data-analyse; procesflows; procesanalyse; tender; contract- en tariefonderhandelingen; juridische en fiscale analyse; stakeholder- en changemanagement."},"solution":{"en":"Rates and contractual terms were tightened and standardized. The full workforce process was redesigned, implemented and embedded, including legal provisions on liability, tax treatment and false self-employment risk.","nl":"De tarief- en contractstructuur is aangescherpt en gestandaardiseerd. Het inhuurproces is volledig herontworpen, geïmplementeerd en geborgd, inclusief juridische afspraken over aansprakelijkheid, fiscale behandeling en schijnzelfstandigheid."},"categories":{"en":["Strategic sourcing","Process optimization","Contract compliance"],"nl":["Strategic sourcing","Procesoptimalisatie","Contractcompliance"]}},{"id":"p10","clientCode":"E","sector":{"en":"Corporate organization","nl":"Zakelijke organisatie"},"project":{"en":"IT licenses","nl":"IT-licenties"},"type":{"en":"Software asset management / demand management / rate optimization","nl":"Software asset management / licentieoptimalisatie / tariefoptimalisatie"},"spend":2532813,"impact":160149,"saving":0.06322969757340949,"impactType":{"en":"Recurring annual savings","nl":"Structurele jaarbesparing"},"result":{"en":"License buffer reduced, lifecycle process improved and unused licenses removed.","nl":"Licentiebuffer verlaagd, lifecycleproces aangescherpt en ongebruikte licenties verwijderd."},"role":{"en":"End-to-end accountable for the analysis, clean-up of unused and incorrectly assigned licenses, process redesign and commercial negotiations, including implementation and controls.","nl":"Volledig verantwoordelijk voor de analyse, de opschoning van ongebruikte en onjuist toegewezen licenties, het procesontwerp en de commerciële onderhandelingen, inclusief implementatie en borging."},"status":{"en":"Implemented, fully realized, embedded and client-validated.","nl":"Volledig geïmplementeerd en gerealiseerd, geborgd en door de klant gevalideerd."},"challenge":{"en":"Licenses were not always assigned correctly, including to former employees. An unnecessarily large license buffer was also maintained.","nl":"Licenties waren niet altijd juist toegewezen, onder meer aan medewerkers die al uit dienst waren. Daarnaast werd een grotere licentiebuffer aangehouden dan operationeel nodig was."},"approach":{"en":"Excel data analysis, license utilization analysis, stakeholder interviews, process analysis and rate negotiation.","nl":"Excel-data-analyse; analyse van licentiegebruik en -benutting; stakeholderinterviews; procesanalyse; tariefonderhandeling."},"solution":{"en":"Unused and incorrectly assigned licenses were removed. The required buffer was recalculated, the joiner-mover-leaver process was tightened and improved rates were agreed.","nl":"Ongebruikte en onjuist toegewezen licenties zijn verwijderd. De benodigde buffer is opnieuw bepaald, het proces rond in-, door- en uitstroom is aangescherpt en er zijn betere tarieven overeengekomen."},"categories":{"en":["Demand management"],"nl":["Demand management"]}},{"id":"p11","clientCode":"E","sector":{"en":"Corporate organization","nl":"Zakelijke organisatie"},"project":{"en":"Marketing and advisory spend","nl":"Marketing- en advieskosten"},"type":{"en":"Make-or-buy analysis / external workforce rationalization","nl":"Make-or-buy / rationalisatie externe inhuur"},"spend":2918791,"impact":212500,"saving":0.07280411649892027,"impactType":{"en":"Recurring annual savings","nl":"Structurele jaarbesparing"},"result":{"en":"External deployment reduced and internal continuity secured.","nl":"Externe inzet afgebouwd en continuïteit intern geborgd."},"role":{"en":"Fully accountable for the analyses, business case, preparation of the decision and implementation, including reduction of external capacity, transfer of activities and design of the required internal capacity.","nl":"Volledig verantwoordelijk voor de analyses, de businesscase, de voorbereiding van de besluitvorming en de implementatie, waaronder het afbouwen van externe inzet, het overdragen van werkzaamheden en het inrichten van de benodigde interne capaciteit."},"status":{"en":"Implemented, fully realized and client-validated.","nl":"Volledig geïmplementeerd en gerealiseerd; resultaat door de klant gevalideerd."},"challenge":{"en":"There was substantial overlap between work performed by external marketing and advisory resources and activities already or potentially performed internally.","nl":"Er was substantiële overlap tussen werkzaamheden van externe marketing- en adviesprofessionals en taken die al intern werden uitgevoerd of intern konden worden belegd."},"approach":{"en":"Excel data analysis, activity analysis, make-or-buy analysis, stakeholder interviews and capacity analysis.","nl":"Excel-data-analyse; activiteitenanalyse; make-or-buy-analyse; stakeholderinterviews; capaciteitsanalyse."},"solution":{"en":"External activities were selectively scaled down and transferred internally. Targeted recruitment was used where structural capacity was required to maintain continuity.","nl":"Externe werkzaamheden zijn afgebouwd waar deze intern konden worden belegd. Waar structureel extra capaciteit nodig bleef, is gericht geworven om de continuïteit te borgen."},"categories":{"en":["Operating model"],"nl":["Organisatiemodel"]}},{"id":"p12","clientCode":"E","sector":{"en":"Corporate organization","nl":"Zakelijke organisatie"},"project":{"en":"Cleaning","nl":"Schoonmaak"},"type":{"en":"Demand management / service-level optimization","nl":"Demand management / optimalisatie serviceniveau"},"spend":692826,"impact":103911,"saving":0.14998138060638602,"impactType":{"en":"Recurring annual savings","nl":"Structurele jaarbesparing"},"result":{"en":"Cleaning frequency 5 → 3 times per week.","nl":"Schoonmaakfrequentie 5 → 3 keer per week."},"role":{"en":"Accountable for the analysis, business case, preparation of the decision, supplier alignment and implementation of the revised service level.","nl":"Verantwoordelijk voor de analyse, businesscase, voorbereiding van de besluitvorming, afstemming met de leverancier en implementatie van het aangepaste serviceniveau."},"status":{"en":"Implemented, fully realized and client-validated.","nl":"Volledig geïmplementeerd en gerealiseerd; resultaat door de klant gevalideerd."},"challenge":{"en":"Cleaning contracts had not been reviewed for approximately ten years. Offices were cleaned five days per week, while occupancy was below 20% on certain days due to hybrid working.","nl":"De schoonmaakcontracten waren circa tien jaar niet herijkt. Locaties werden vijf dagen per week schoongemaakt, terwijl de kantoorbezetting door structureel thuiswerken op sommige dagen onder 20% lag."},"approach":{"en":"Excel data analysis, occupancy analysis, stakeholder interviews, business case and service-level redesign.","nl":"Excel-data-analyse; bezettingsanalyse; stakeholderinterviews; businesscase; herontwerp van het serviceniveau."},"solution":{"en":"Regular cleaning frequency was aligned with actual use and reduced from five to three times per week.","nl":"De schoonmaakfrequentie is opnieuw afgestemd op het werkelijke gebruik van de kantoren en teruggebracht van vijf naar drie keer per week."},"categories":{"en":["Demand management"],"nl":["Demand management"]}},{"id":"p13","clientCode":"F","sector":{"en":"Elderly care","nl":"Ouderenzorg"},"project":{"en":"Rent and building maintenance – demarcation","nl":"Huur en bouwkundig onderhoud – demarcatie"},"type":{"en":"Contract compliance / demarcation analysis / cash recovery","nl":"Contractcompliance / demarcatieanalyse / terugvordering"},"spend":null,"impact":108305,"saving":null,"impactType":{"en":"One-off cash recovery","nl":"Eenmalige terugvordering"},"result":{"en":"€108,305 of incorrectly charged costs recovered.","nl":"€108.305 aan onterecht doorbelaste kosten teruggevorderd."},"role":{"en":"End-to-end accountable for the analysis, invoice review, case-file development and recovery process, including discussions with internal stakeholders and the property owner.","nl":"Volledig verantwoordelijk voor de analyse, factuurcontrole, dossieropbouw en het terugvorderingstraject, inclusief de gesprekken met interne stakeholders en de pandeigenaar."},"status":{"en":"Fully recovered and client-validated.","nl":"Volledig teruggevorderd en door de klant gevalideerd."},"challenge":{"en":"Building maintenance activities had been charged to the tenant even though the lease demarcation assigned these costs to the property owner.","nl":"Bouwkundige werkzaamheden waren bij de huurder in rekening gebracht, terwijl deze volgens de demarcatie voor rekening van de pandeigenaar kwamen."},"approach":{"en":"Excel data analysis, contract compliance, demarcation analysis, invoice review, case-file development and stakeholder discussions.","nl":"Excel-data-analyse; contractcompliance; demarcatieanalyse; factuurcontrole; dossieropbouw; stakeholdergesprekken."},"solution":{"en":"Incorrectly charged costs were challenged and recovered from the owner using contractual substantiation and supporting evidence.","nl":"De onterecht doorbelaste kosten zijn met contractuele onderbouwing en bewijsstukken bij de pandeigenaar betwist en teruggevorderd."},"categories":{"en":["Contract compliance"],"nl":["Contractcompliance"]}},{"id":"p14","clientCode":"F","sector":{"en":"Elderly care","nl":"Ouderenzorg"},"project":{"en":"IT service provision","nl":"I&A-dienstverlening"},"type":{"en":"Scope optimization / service-model analysis / make-or-buy","nl":"Scope-optimalisatie / dienstverleningsmodel / make-or-buy"},"spend":867537,"impact":64578,"saving":0.07443832366803951,"impactType":{"en":"Validated annual savings potential","nl":"Gevalideerd jaarlijks besparingspotentieel"},"result":{"en":"Transition from fixed fee to payment per ticket in progress; baseline approximately €208 per resolved ticket.","nl":"Overgang van een vaste vergoeding naar betaling per ticket in uitvoering; uitgangssituatie circa €208 per opgelost ticket."},"role":{"en":"Fully accountable for the analysis, redesign of the service and negotiations on scope, rates and contractual terms.","nl":"Volledig verantwoordelijk voor de analyse, het herontwerp van de dienstverlening en de onderhandelingen over scope, tarieven en contractvoorwaarden."},"status":{"en":"Implementation in progress. The annual savings potential has been validated with the client; realization is being tracked during the rollout of the new service and payment model.","nl":"Implementatie loopt. Het jaarlijkse besparingspotentieel is samen met de klant gevalideerd. Tijdens de invoering van het nieuwe dienstverlenings- en betaalmodel wordt de daadwerkelijke realisatie gevolgd."},"challenge":{"en":"There was overlap between contracted IT services and activities performed internally. The supplier charged a fixed fee regardless of actual usage.","nl":"Er was overlap tussen gecontracteerde IT-dienstverlening en werkzaamheden die intern al werden uitgevoerd. Tegelijkertijd betaalde de organisatie één vast bedrag, ongeacht het daadwerkelijke gebruik."},"approach":{"en":"Excel data analysis, contract and scope analysis, ticket analysis, stakeholder interviews and make-or-buy analysis.","nl":"Excel-data-analyse; contract- en scopeanalyse; ticketanalyse; stakeholderinterviews; make-or-buy-analyse."},"solution":{"en":"The service scope has been redesigned to remove overlapping activities. The transition from a fixed-fee model to payment per ticket is currently being implemented so costs align more directly with actual usage.","nl":"De dienstverlening is opnieuw afgebakend en overlappende werkzaamheden zijn uit de scope gehaald. De overstap van een vaste vergoeding naar betaling per ticket wordt momenteel ingevoerd, zodat de kosten beter aansluiten op het daadwerkelijke gebruik."},"categories":{"en":["Operating model"],"nl":["Organisatiemodel"]}},{"id":"p15","clientCode":"F","sector":{"en":"Elderly care","nl":"Ouderenzorg"},"project":{"en":"Food","nl":"Voeding"},"type":{"en":"Assortment rationalization / strategic sourcing / change management","nl":"Assortimentsrationalisatie / strategic sourcing / changemanagement"},"spend":3745650,"impact":362644,"saving":0.09681737482145956,"impactType":{"en":"Validated annual savings potential","nl":"Gevalideerd jaarlijks besparingspotentieel"},"result":{"en":"Target assortment approximately 4,600 → 1,000 items. Validated savings potential: approximately 30% pack-size changes, 40% A-to-B brand substitution and 30% price.","nl":"Doel: assortiment van circa 4.600 → 1.000 artikelen. Gevalideerd besparingspotentieel: circa 30% door aangepaste verpakkingsgroottes, 40% door substitutie van A- naar B-merken en 30% door prijsverbetering."},"role":{"en":"Project Lead with end-to-end accountability for the analysis, working-group governance, development and implementation of the core assortment, change management and supplier and rate negotiations. Junior and mid-level consultants supported delivery; I allocated work and monitored quality, progress and results.","nl":"Projectlead en verantwoordelijk voor de analyse, de aansturing van de werkgroepen, de ontwikkeling en implementatie van het kernassortiment, changemanagement en de leveranciers- en tariefonderhandelingen. Junior en medior consultants ondersteunden de uitvoering; ik verdeelde het werk en bewaakte kwaliteit, voortgang en resultaat."},"status":{"en":"Implementation in progress. The savings potential has been validated with the client; realization is being monitored as the core assortment is rolled out and supplier agreements are implemented.","nl":"Implementatie loopt. Het besparingspotentieel is samen met de klant gevalideerd. De realisatie wordt gemonitord tijdens de uitrol van het kernassortiment en de implementatie van de leveranciersafspraken."},"challenge":{"en":"The food assortment was very broad and largely unstandardized. Locations purchased different product types and quality levels, limiting scale benefits and control.","nl":"Het voedingsassortiment was zeer breed en nauwelijks gestandaardiseerd. Locaties kochten verschillende producttypen en kwaliteitsniveaus in, waardoor schaalvoordeel en centrale sturing beperkt waren."},"approach":{"en":"Excel data analysis, assortment analysis, working groups, stakeholder and change management, and supplier and rate negotiations.","nl":"Excel-data-analyse; assortimentsanalyse; werkgroepen; stakeholder- en changemanagement; leveranciers- en tariefonderhandelingen."},"solution":{"en":"A core assortment has been developed with users and is currently being rolled out across the organization. The target is to reduce the assortment from approximately 4,600 to 1,000 items. The consolidated purchasing base is also being used in supplier negotiations.","nl":"Samen met gebruikers is een kernassortiment opgesteld dat momenteel binnen de organisatie wordt ingevoerd. Het assortiment wordt daarbij teruggebracht van circa 4.600 naar 1.000 artikelen. De gebundelde inkoop wordt daarnaast gebruikt in de onderhandelingen met de leverancier."},"categories":{"en":["Strategic sourcing"],"nl":["Strategic sourcing"]}},{"id":"p16","clientCode":"F","sector":{"en":"Elderly care","nl":"Ouderenzorg"},"project":{"en":"Rent and building maintenance – process optimization","nl":"Huur en bouwkundig onderhoud – procesoptimalisatie"},"type":{"en":"Lean process optimization / First Time Right","nl":"Lean-procesoptimalisatie / First Time Right"},"spend":null,"impact":244231,"saving":null,"impactType":{"en":"Validated annual savings potential","nl":"Gevalideerd jaarlijks besparingspotentieel"},"result":{"en":"First Time Right has improved during implementation and is projected to reach 78%, compared with 44.5% at baseline and a 75% target.","nl":"First Time Right is tijdens de implementatie gestegen en wordt geprognosticeerd op 78%, ten opzichte van 44,5% bij de start en een doelstelling van 75%."},"role":{"en":"End-to-end accountable for the complete improvement engagement: facilitation of brown-paper sessions, analysis, process design, implementation and controls. Junior and mid-level consultants supported delivery; I directed the work and monitored progress and quality.","nl":"Verantwoordelijk voor het volledige verbetertraject: brownpapersessies, analyse, procesontwerp, implementatie en borging. Junior en medior consultants ondersteunden de uitvoering; ik gaf inhoudelijk richting en bewaakte voortgang en kwaliteit."},"status":{"en":"Implementation in progress. The savings potential has been validated with the client; the process changes are still being embedded and financial realization is being monitored.","nl":"Implementatie loopt. Het besparingspotentieel is samen met de klant gevalideerd. De proceswijzigingen worden nog verder geborgd en de financiële realisatie wordt gemonitord."},"challenge":{"en":"The maintenance supplier required many repeat visits to resolve issues, creating additional costs and lost time for employees supporting supplier visits.","nl":"De onderhoudsleverancier had veel herhaalbezoeken nodig om storingen op te lossen. Dat leidde tot extra kosten en tijdverlies voor medewerkers die leveranciers op locatie moesten begeleiden."},"approach":{"en":"Brown-paper sessions, Excel data analysis, process analysis, root-cause analysis and stakeholder and supplier management.","nl":"Brownpapersessies; Excel-data-analyse; procesanalyse; root-cause-analyse; stakeholder- en leveranciersmanagement."},"solution":{"en":"A revised request process is being implemented so users provide more complete information before a supplier visit. Process waste has been addressed with the supplier and preparation for site visits has been improved as part of the ongoing rollout.","nl":"Er wordt een nieuw meldingsproces ingevoerd waarmee gebruikers vooraf vollediger aangeven wat er op locatie nodig is. Samen met de leverancier zijn verspillingen uit het proces gehaald en is de voorbereiding op locatiebezoeken verbeterd. De verdere uitrol loopt nog."},"categories":{"en":["Process optimization"],"nl":["Procesoptimalisatie"]}},{"id":"p17","clientCode":"F","sector":{"en":"Elderly care","nl":"Ouderenzorg"},"project":{"en":"Transport claims","nl":"Declaraties vervoer"},"type":{"en":"Process optimization / revenue assurance / data controls","nl":"Procesoptimalisatie / declaratiecontrole / datareconciliatie"},"spend":993761,"impact":64759,"saving":0.0651655679786186,"impactType":{"en":"Validated annual savings potential","nl":"Gevalideerd jaarlijks besparingspotentieel"},"result":{"en":"Recurring mismatch detection, follow-up and process ownership are being embedded as part of the implementation.","nl":"Structurele controle op mismatches, opvolging en proceseigenaarschap worden momenteel ingericht en geborgd."},"role":{"en":"End-to-end accountable for data analysis, reconciliation, process analysis, design, implementation and controls. Junior and mid-level consultants support delivery; I remain accountable for quality and the final outcome.","nl":"Verantwoordelijk voor data-analyse, reconciliatie, procesanalyse, ontwerp, implementatie en borging. Junior en medior consultants ondersteunen bij de uitvoering; ik blijf verantwoordelijk voor kwaliteit en resultaat."},"status":{"en":"Implementation in progress; annual savings potential validated with the client.","nl":"Implementatie loopt; het jaarlijkse besparingspotentieel is samen met de klant gevalideerd."},"challenge":{"en":"The same mismatch pattern addressed at Client C: differences between clients transported, claims submitted and journeys invoiced.","nl":"Hetzelfde mismatchpatroon als bij Klant C: verschillen tussen vervoerde cliënten, ingediende declaraties en gefactureerde ritten."},"approach":{"en":"Excel data analysis, Power BI, data reconciliation, flowcharts, stakeholder interviews, process design, implementation and controls.","nl":"Data-analyse in Excel en Power BI; datareconciliatie; flowcharts; stakeholderinterviews; procesontwerp; implementatie en borging."},"solution":{"en":"A standardized control and reconciliation process is being implemented to identify, correct and periodically monitor differences.","nl":"Een gestandaardiseerd controle- en reconciliatieproces wordt ingericht om verschillen tijdig te signaleren, te corrigeren en periodiek te monitoren."},"categories":{"en":["Process optimization"],"nl":["Procesoptimalisatie"]}}],"competencies":[{"name":{"en":"Excel data analysis","nl":"Excel-data-analyse"},"count":15,"evidence":{"en":"Spend, rates, invoices, inventory, licenses, occupancy and reconciliations","nl":"Spendanalyses, tarieven, facturen, voorraad, licenties, bezetting en reconciliaties"}},{"name":{"en":"Power BI / dashboarding","nl":"Power BI / dashboards"},"count":2,"evidence":{"en":"Transport claims and recurring controls","nl":"Declaratiecontroles en periodieke monitoring"}},{"name":{"en":"Process analysis and design","nl":"Procesanalyse en procesontwerp"},"count":13,"evidence":{"en":"Contingent workforce, transport, maintenance, licenses and service delivery","nl":"PNIL, vervoer, onderhoud, licenties en dienstverlening"}},{"name":{"en":"Strategic sourcing / tendering","nl":"Strategic sourcing en tenders"},"count":5,"evidence":{"en":"Contingent workforce, security, medical equipment and food","nl":"PNIL, beveiliging, medische apparatuur en voeding"}},{"name":{"en":"Commercial negotiations","nl":"Commerciële onderhandelingen"},"count":7,"evidence":{"en":"Rates, contractual terms, service levels and scope","nl":"Tarieven, contractvoorwaarden, serviceniveaus en scope"}},{"name":{"en":"Contract compliance","nl":"Contractcompliance"},"count":4,"evidence":{"en":"VAT, demarcation, invoicing and contract scope","nl":"Btw, demarcatie, facturatie en contractscope"}},{"name":{"en":"Supplier consolidation","nl":"Leveranciersconsolidatie"},"count":3,"evidence":{"en":"Security, office supplies and contingent workforce","nl":"Beveiliging, kantoormiddelen en PNIL"}},{"name":{"en":"Demand management","nl":"Demand management"},"count":4,"evidence":{"en":"Mops, cleaning, licenses and assortment","nl":"Mops, schoonmaak, licenties en assortiment"}},{"name":{"en":"Stakeholder and change management","nl":"Stakeholder- en changemanagement"},"count":8,"evidence":{"en":"Working groups, executive steering committees, suppliers and users","nl":"Werkgroepen, stuurgroepen met directie, leveranciers en gebruikers"}},{"name":{"en":"Lean / Gemba / Brown paper","nl":"Lean / Gemba / brown paper"},"count":2,"evidence":{"en":"Cleanrooms and building maintenance","nl":"Cleanrooms en bouwkundig onderhoud"}},{"name":{"en":"Legal and tax analysis","nl":"Juridische en fiscale analyse"},"count":3,"evidence":{"en":"Contingent workforce, VAT, liability and false self-employment","nl":"PNIL, btw, aansprakelijkheid en schijnzelfstandigheid"}},{"name":{"en":"Implementation and controls","nl":"Implementatie en borging"},"count":12,"evidence":{"en":"New processes, contracts, dashboards, controls and handover memoranda","nl":"Nieuwe processen, contracten, dashboards, controlebestanden en overdrachtsdocumentatie"}},{"name":{"en":"Team coaching","nl":"Begeleiding van consultants"},"count":7,"evidence":{"en":"Direction and coaching of Junior and Medior Consultants","nl":"Inhoudelijke aansturing en coaching van junior- en mediorconsultants"}}]};
+      const C = {"en":{"brand":"Project Portfolio","navImpact":"Impact","navCases":"Selected cases","navMethods":"Methods","navLibrary":"Full library","print":"Print / Save PDF","heroTitle":"From analysis to implemented impact.","byline":"Thomas Spijker · Senior Management Consultant · Lean Six Sigma Black Belt","heroLead":"{projects} improvement engagements across healthcare, life sciences and corporate operations — {spend} in analyzed spend and {impact} in realized savings and client-validated savings potential.","metaYears":"4.5 years","metaImpl":"End-to-end implementation","metaTeam":"Team leadership & mentorship","deliveryTitle":"Delivery profile","deliveryTypical":"Engagement duration","deliveryMonths":"3–18 months","deliveryWorkstreams":"Concurrent workstreams","deliveryTeam":"Team size","deliveryConsultants":"Up to 5 per project","deliveryGovernance":"Governance","deliveryGovValue":"Working group + steering committee","deliveryCommercial":"Commercial model","deliveryCommercialValue":"No cure, no pay · fees tied to demonstrable results","deliveryValidation":"Impact validation","deliveryValidated":"Client-validated","kpiProjects":"Projects","kpiProjectsSub":"Improvement engagements","kpiSpend":"Analyzed spend","kpiSpendSub":"Known annual baseline","kpiImpact":"Financial impact","kpiImpactSub":"Realized + validated potential","kpiRate":"Annual impact rate","kpiRateSub":"Recurring savings / spend with known baseline","impactIntro":"Recurring annual figures include realized savings and client-validated savings potential for projects still in implementation. One-off recoveries are shown separately.","impactClientTitle":"Impact by client & sector","anonNote":"Client names and identifying details removed","realizedRecurring":"Realized recurring savings","oneOff":"One-off cash recovered","potential":"Client-validated potential","potentialSuffix":"projects in implementation","factValidated":"Financial outcome or potential client-validated","factLargest":"Largest single engagement impact","factFill":"Contingent workforce fill rate","factFtr":"First Time Right performance","casesTitle":"Three engagements, three different levers.","casesIntro":"Three examples showing strategic sourcing, Lean process improvement and simplification in practice.","challenge":"Challenge","intervention":"Intervention","result":"Result","themeP09":"Strategic sourcing at scale","themeP16":"Lean process improvement","themeP05":"Consolidation & simplification","methodsTitle":"Methods used across the portfolio.","methodsIntro":"Ranked by the number of the {projects} projects in which each method was a material part of delivery.","libraryTitle":"Full project library.","libraryIntro":"Two high-impact cases are shown first. Expand the library to search, filter and inspect the complete portfolio.","showAll":"Show all {projects} projects","searchPlaceholder":"Search projects, tools or results","allClients":"All clients","allInterventions":"All interventions","sortImpactDesc":"Impact: high to low","sortImpactAsc":"Impact: low to high","sortSavingDesc":"Savings %: high to low","sortProjectAsc":"Project: A–Z","projectsOf":"of","projectsLabel":"projects","noResults":"No projects match the selected filters.","spendBaseline":"Spend baseline","savings":"Savings","projectType":"Project type","openDetails":"Open case details","approachTools":"Approach & tools","roleLeadership":"Role / leadership","implementedSolution":"Implemented solution","statusValidation":"Status / validation","footerTitle":"Anonymized Lean Six Sigma project portfolio","footerText":"Client names, supplier names and identifying details have been removed. Figures reflect realized financial outcomes or savings potential validated with the client.","location":"Zaandam, Netherlands"},"nl":{"brand":"Projectportfolio","navImpact":"Impact","navCases":"Uitgelichte projecten","navMethods":"Methoden","navLibrary":"Alle projecten","print":"Print / opslaan als PDF","heroTitle":"Van analyse naar gerealiseerd resultaat.","byline":"Thomas Spijker · Senior Management Consultant · Lean Six Sigma Black Belt","heroLead":"{projects} verbetertrajecten binnen zorg, life sciences en bedrijfsvoering — {spend} geanalyseerde spend en {impact} aan gerealiseerde besparingen en door de klant gevalideerd besparingspotentieel.","metaYears":"4,5 jaar","metaImpl":"Van analyse tot implementatie","metaTeam":"Teamleiding & mentoring","deliveryTitle":"Uitvoering","deliveryTypical":"Doorlooptijd","deliveryMonths":"3–18 maanden","deliveryWorkstreams":"Gelijktijdige trajecten","deliveryTeam":"Teamgrootte","deliveryConsultants":"Tot 5 per project","deliveryGovernance":"Besluitvorming","deliveryGovValue":"Werkgroep + stuurgroep","deliveryCommercial":"Commercieel model","deliveryCommercialValue":"No cure, no pay · vergoeding gekoppeld aan aantoonbaar resultaat","deliveryValidation":"Impactvalidatie","deliveryValidated":"Door klant gevalideerd","kpiProjects":"Projecten","kpiProjectsSub":"Verbetertrajecten","kpiSpend":"Geanalyseerde spend","kpiSpendSub":"Jaarlijkse spend met bekende baseline","kpiImpact":"Financiële impact","kpiImpactSub":"Gerealiseerd + gevalideerd potentieel","kpiRate":"Jaarbesparing / spend","kpiRateSub":"Structurele besparing / spend met bekende baseline","impactIntro":"De jaarlijkse bedragen bestaan uit gerealiseerde besparingen én door de klant gevalideerd besparingspotentieel voor trajecten die nog in implementatie zijn. Eenmalige terugvorderingen zijn apart weergegeven.","impactClientTitle":"Impact per klant & sector","anonNote":"Klantnamen en herleidbare details zijn verwijderd","realizedRecurring":"Gerealiseerde structurele besparingen","oneOff":"Eenmalig teruggevorderd","potential":"Door klant gevalideerd potentieel","potentialSuffix":"projecten in implementatie","factValidated":"Financieel resultaat of potentieel door klant gevalideerd","factLargest":"Grootste financiële impact binnen één traject","factFill":"Invulgraad PNIL","factFtr":"First Time Right-prestatie","casesTitle":"Drie trajecten, drie verschillende verbetermechanismen.","casesIntro":"Drie voorbeelden van strategic sourcing, Lean-procesverbetering en vereenvoudiging in de praktijk.","challenge":"Probleemstelling","intervention":"Aanpak","result":"Resultaat","themeP09":"Strategic sourcing op schaal","themeP16":"Lean-procesverbetering","themeP05":"Consolidatie & vereenvoudiging","methodsTitle":"Methoden toegepast binnen het portfolio.","methodsIntro":"Gerangschikt op het aantal van de {projects} projecten waarin de methode een wezenlijk onderdeel was.","libraryTitle":"Volledig projectoverzicht.","libraryIntro":"Eerst staan twee trajecten met hoge impact in beeld. Klap het overzicht uit om alle projecten te doorzoeken, filteren en bekijken.","showAll":"Toon alle {projects} projecten","searchPlaceholder":"Zoek op project, methode of resultaat","allClients":"Alle klanten","allInterventions":"Alle interventies","sortImpactDesc":"Impact: hoog naar laag","sortImpactAsc":"Impact: laag naar hoog","sortSavingDesc":"Besparing: hoog naar laag","sortProjectAsc":"Project: A–Z","projectsOf":"van","projectsLabel":"projecten","noResults":"Geen projecten gevonden met deze filters.","spendBaseline":"Jaarlijkse spend","savings":"Besparing","projectType":"Type traject","openDetails":"Bekijk projectdetails","approachTools":"Aanpak en tools","roleLeadership":"Rol en verantwoordelijkheid","implementedSolution":"Oplossing en implementatie","statusValidation":"Status en validatie","footerTitle":"Geanonimiseerd Lean Six Sigma-projectportfolio","footerText":"Klant- en leveranciersnamen en andere herleidbare details zijn verwijderd. De bedragen betreffen gerealiseerde financiële resultaten of besparingspotentieel dat samen met de klant is gevalideerd.","location":"Zaandam, Nederland"}};
+      const FEATURED = ['p09','p16','p05'];
+      const root = document;
+      let lang = 'en';
+      let libraryExpanded = false;
+      let openedForPrint = [];
+      let printFilterState = null;
+
+      const $ = id => root.getElementById(id);
+      const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+      const local = value => value && typeof value === 'object' && ('en' in value || 'nl' in value) ? value[lang] : value;
+      const locale = () => lang === 'nl' ? 'nl-NL' : 'en-US';
+      const clientLabel = code => lang === 'nl' ? `Klant ${code}` : `Client ${code}`;
+      const projectCount = DATA.projects.length;
+      const clientCount = new Set(DATA.projects.map(p => p.clientCode)).size;
+      const classify = p => {
+        const t = String(p.impactType.en || '').toLowerCase();
+        if (t.includes('one-off')) return 'oneoff';
+        if (t.includes('potential')) return 'potential';
+        return 'recurring';
+      };
+      const totalSpend = DATA.projects.reduce((sum,p) => sum + (Number(p.spend) || 0), 0);
+      const totalImpact = DATA.projects.reduce((sum,p) => sum + Number(p.impact || 0), 0);
+      const realizedRecurring = DATA.projects.filter(p => classify(p)==='recurring').reduce((s,p)=>s+p.impact,0);
+      const oneOff = DATA.projects.filter(p => classify(p)==='oneoff').reduce((s,p)=>s+p.impact,0);
+      const potential = DATA.projects.filter(p => classify(p)==='potential').reduce((s,p)=>s+p.impact,0);
+      const potentialCount = DATA.projects.filter(p => classify(p)==='potential').length;
+      const realizedTotal = realizedRecurring + oneOff;
+      const realizedPct = totalImpact ? realizedTotal / totalImpact : 0;
+      const annualKnownImpact = DATA.projects.filter(p => classify(p)!=='oneoff' && p.spend != null).reduce((s,p)=>s+p.impact,0);
+      const impactRate = totalSpend ? annualKnownImpact / totalSpend : 0;
+      const validatedCount = DATA.projects.filter(p => String(p.status.en || '').toLowerCase().includes('validated')).length;
+      const largestImpact = Math.max(...DATA.projects.map(p => p.impact || 0));
+      const teaserIds = DATA.projects
+        .filter(p => !FEATURED.includes(p.id))
+        .sort((a,b)=>b.impact-a.impact)
+        .slice(0,2)
+        .map(p=>p.id);
+
+      const money = value => new Intl.NumberFormat(locale(), {style:'currency',currency:'EUR',maximumFractionDigits:0}).format(value);
+      const compactMoney = value => {
+        if (value >= 1000000) {
+          const v = value / 1000000;
+          return lang === 'nl' ? `€${v.toLocaleString('nl-NL',{maximumFractionDigits:2})} mln` : `€${v.toLocaleString('en-US',{maximumFractionDigits:2})}m`;
+        }
+        if (value >= 1000) {
+          const v = value / 1000;
+          return lang === 'nl' ? `€${v.toLocaleString('nl-NL',{maximumFractionDigits:0})}k` : `€${v.toLocaleString('en-US',{maximumFractionDigits:0})}k`;
+        }
+        return money(value);
+      };
+      const pct = (value, digits=1) => new Intl.NumberFormat(locale(), {style:'percent',minimumFractionDigits:digits,maximumFractionDigits:digits}).format(value);
+      const text = (id, value) => { const el=$(id); if(el) el.textContent=value; };
+      const template = (value, vars) => Object.entries(vars).reduce((s,[k,v])=>s.replaceAll(`{${k}}`, String(v)), value);
+
+      function renderStaticCopy() {
+        const c = C[lang];
+        document.documentElement.lang = lang;
+        document.title = lang === 'nl' ? 'Lean Six Sigma-projectportfolio — Thomas Spijker' : 'Lean Six Sigma Project Portfolio — Thomas Spijker';
+        text('skipLink', lang === 'nl' ? 'Naar de inhoud' : 'Skip to content');
+        text('brandText', c.brand);
+        text('navImpact', c.navImpact);
+        text('navCases', c.navCases);
+        text('navMethods', c.navMethods);
+        text('navLibrary', c.navLibrary);
+        text('printButton', c.print);
+        text('heroTitle', c.heroTitle);
+        text('heroByline', c.byline);
+        text('heroLead', template(c.heroLead, {
+          projects: projectCount,
+          spend: compactMoney(totalSpend),
+          impact: compactMoney(totalImpact)
+        }));
+        text('metaYears', c.metaYears);
+        text('metaImpl', c.metaImpl);
+        text('metaTeam', c.metaTeam);
+        ['deliveryTitle','deliveryTypical','deliveryMonths','deliveryWorkstreams','deliveryTeam','deliveryConsultants',
+         'deliveryGovernance','deliveryGovValue','deliveryCommercial','deliveryCommercialValue','deliveryValidation','deliveryValidated',
+         'kpiProjects','kpiProjectsSub','kpiSpend','kpiSpendSub','kpiImpact','kpiImpactSub','kpiRate','kpiRateSub',
+         'impactIntro','impactClientTitle','anonNote','factValidated','factLargest','factFill','factFtr',
+         'casesTitle','casesIntro','methodsTitle','libraryTitle','libraryIntro','footerTitle','footerText','location'
+        ].forEach(key => text(key, c[key]));
+
+        text('kpiProjectsValue', projectCount);
+        text('kpiSpendValue', compactMoney(totalSpend));
+        text('kpiImpactValue', compactMoney(totalImpact));
+        text('kpiRateValue', pct(impactRate,1));
+
+        const impactTitle = lang === 'nl'
+          ? `${compactMoney(totalImpact)} financiële impact bij ${clientCount} geanonimiseerde klanten.`
+          : `${compactMoney(totalImpact)} across ${clientCount} anonymized clients.`;
+        text('impactTitle', impactTitle);
+        const realizedHeadline = lang === 'nl'
+          ? `${pct(realizedPct,1)} van de ${compactMoney(totalImpact)} is gerealiseerd.`
+          : `${pct(realizedPct,1)} of the ${compactMoney(totalImpact)} is realized.`;
+        text('realizedHeadline', realizedHeadline);
+        text('realizedNote', lang === 'nl'
+          ? 'Het resterende deel betreft besparingspotentieel dat samen met de klant is gevalideerd en nog in implementatie is.'
+          : 'The remainder is client-validated savings potential in projects that are still in implementation.');
+
+        text('realizedRecurringValue', `${money(realizedRecurring)} (${pct(realizedRecurring/totalImpact,1)})`);
+        text('realizedRecurringLabel', c.realizedRecurring);
+        text('oneOffValue', `${money(oneOff)} (${pct(oneOff/totalImpact,1)})`);
+        text('oneOffLabel', c.oneOff);
+        text('potentialValue', `${money(potential)} (${pct(potential/totalImpact,1)})`);
+        text('potentialLabel', `${c.potential} · ${potentialCount} ${c.potentialSuffix}`);
+
+        $('segRealized').style.width = `${(realizedRecurring/totalImpact*100).toFixed(3)}%`;
+        $('segOneoff').style.width = `${(oneOff/totalImpact*100).toFixed(3)}%`;
+        $('segPotential').style.width = `${(potential/totalImpact*100).toFixed(3)}%`;
+        $('proportionBar').setAttribute('aria-label',
+          lang === 'nl'
+          ? `${c.realizedRecurring} ${money(realizedRecurring)}, ${c.oneOff} ${money(oneOff)}, ${c.potential} ${money(potential)}`
+          : `${c.realizedRecurring} ${money(realizedRecurring)}, ${c.oneOff} ${money(oneOff)}, ${c.potential} ${money(potential)}`
+        );
+
+        text('factValidatedValue', `${validatedCount} / ${projectCount}`);
+        text('factLargestValue', compactMoney(largestImpact));
+        text('methodsIntro', template(c.methodsIntro, {projects:projectCount}));
+        text('showAllButton', template(c.showAll, {projects:projectCount}));
+        $('showAllButton').setAttribute('aria-expanded', String(libraryExpanded));
+        $('searchInput').placeholder = c.searchPlaceholder;
+        $('searchInput').setAttribute('aria-label', c.searchPlaceholder);
+
+        $('langEn').classList.toggle('active', lang==='en');
+        $('langNl').classList.toggle('active', lang==='nl');
+        $('langEn').setAttribute('aria-pressed', String(lang==='en'));
+        $('langNl').setAttribute('aria-pressed', String(lang==='nl'));
+
+        const desc = `${projectCount} improvement engagements, ${compactMoney(totalSpend)} analyzed spend, ${compactMoney(totalImpact)} realized and client-validated impact.`;
+        const metaDesc = document.querySelector('meta[name="description"]');
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        if (metaDesc) metaDesc.setAttribute('content', desc);
+        if (ogDesc) ogDesc.setAttribute('content', desc);
+      }
+
+      function renderImpactClients() {
+        const totals = new Map();
+        DATA.projects.forEach(p => {
+          if (!totals.has(p.clientCode)) totals.set(p.clientCode, {impact:0, sector:p.sector});
+          totals.get(p.clientCode).impact += p.impact;
+        });
+        const rows = [...totals.entries()].map(([code,v])=>({code,...v})).sort((a,b)=>b.impact-a.impact);
+        const max = Math.max(...rows.map(r=>r.impact),1);
+        $('impactList').innerHTML = rows.map(r => `
+          <div class="impact-row">
+            <div class="impact-row-head">
+              <span>${escapeHTML(clientLabel(r.code))} · ${escapeHTML(local(r.sector))}</span>
+              <strong>${escapeHTML(compactMoney(r.impact))}</strong>
+            </div>
+            <div class="impact-track" aria-hidden="true"><div class="impact-fill" style="width:${(r.impact/max*100).toFixed(1)}%"></div></div>
+          </div>`).join('');
+      }
+
+      function renderSelectedCases() {
+        const themes = {p09:C[lang].themeP09,p16:C[lang].themeP16,p05:C[lang].themeP05};
+        $('featureList').innerHTML = FEATURED.map(id => {
+          const p = DATA.projects.find(x=>x.id===id);
+          return `
+            <article class="case-feature">
+              <div class="case-head">
+                <div>
+                  <p class="case-theme">${escapeHTML(themes[id])}</p>
+                  <h3 class="case-title">${escapeHTML(local(p.project))}</h3>
+                  <p class="case-meta">${escapeHTML(clientLabel(p.clientCode))} · ${escapeHTML(local(p.sector))}</p>
+                </div>
+                <div class="case-impact">
+                  <strong>${escapeHTML(compactMoney(p.impact))}</strong>
+                  <span>${escapeHTML(local(p.impactType))}</span>
+                </div>
+              </div>
+              <div class="case-columns">
+                <div class="case-col"><h4>${escapeHTML(C[lang].challenge)}</h4><p>${escapeHTML(local(p.challenge))}</p></div>
+                <div class="case-col"><h4>${escapeHTML(C[lang].intervention)}</h4><p>${escapeHTML(local(p.approach))}</p></div>
+                <div class="case-col result"><h4>${escapeHTML(C[lang].result)}</h4><p>${escapeHTML(local(p.result))}</p></div>
+              </div>
+            </article>`;
+        }).join('');
+      }
+
+      function renderMethods() {
+        const sorted = [...DATA.competencies].sort((a,b)=>b.count-a.count || String(local(a.name)).localeCompare(String(local(b.name)), locale()));
+        $('methodsList').innerHTML = sorted.map(m => `
+          <div class="method-row">
+            <div class="method-copy"><strong>${escapeHTML(local(m.name))}</strong><span title="${escapeHTML(local(m.evidence))}">${escapeHTML(local(m.evidence))}</span></div>
+            <div class="method-track" aria-hidden="true"><div class="method-fill" style="width:${Math.min(100,m.count/projectCount*100).toFixed(1)}%"></div></div>
+            <div class="method-count">${escapeHTML(m.count)}</div>
+          </div>`).join('');
+      }
+
+      function populateControls() {
+        const c=C[lang];
+        const clients=[...new Set(DATA.projects.map(p=>p.clientCode))].sort();
+        const categories=[...new Set(DATA.projects.flatMap(p=>local(p.categories) || []))].sort((a,b)=>a.localeCompare(b,locale()));
+        $('clientFilter').innerHTML = `<option value="">${escapeHTML(c.allClients)}</option>` + clients.map(code=>`<option value="${escapeHTML(code)}">${escapeHTML(clientLabel(code))}</option>`).join('');
+        $('categoryFilter').innerHTML = `<option value="">${escapeHTML(c.allInterventions)}</option>` + categories.map(cat=>`<option value="${escapeHTML(cat)}">${escapeHTML(cat)}</option>`).join('');
+        $('sortSelect').innerHTML = `
+          <option value="impact-desc">${escapeHTML(c.sortImpactDesc)}</option>
+          <option value="impact-asc">${escapeHTML(c.sortImpactAsc)}</option>
+          <option value="saving-desc">${escapeHTML(c.sortSavingDesc)}</option>
+          <option value="project-asc">${escapeHTML(c.sortProjectAsc)}</option>`;
+      }
+
+      function projectCard(p) {
+        const c=C[lang];
+        const cats=(local(p.categories)||[]).map(escapeHTML);
+        const line=[...cats, escapeHTML(local(p.impactType))].join(' · ');
+        const spend = p.spend == null ? '—' : money(p.spend);
+        const saving = p.saving == null ? '—' : pct(p.saving,1);
+        return `
+          <article class="project-card">
+            <div class="project-top">
+              <div><h3>${escapeHTML(local(p.project))}</h3><p class="project-client">${escapeHTML(clientLabel(p.clientCode))} · ${escapeHTML(local(p.sector))}</p></div>
+              <div class="project-impact">${escapeHTML(compactMoney(p.impact))}</div>
+            </div>
+            <p class="project-line">${line}</p>
+            <div class="project-data">
+              <div><span>${escapeHTML(c.spendBaseline)}</span><strong>${escapeHTML(spend)}</strong></div>
+              <div><span>${escapeHTML(c.savings)}</span><strong>${escapeHTML(saving)}</strong></div>
+              <div><span>${escapeHTML(c.projectType)}</span><strong>${escapeHTML(local(p.type))}</strong></div>
+            </div>
+            <details>
+              <summary>${escapeHTML(c.openDetails)}</summary>
+              <div class="detail-grid">
+                <div class="detail-block"><h4>${escapeHTML(c.challenge)}</h4><p>${escapeHTML(local(p.challenge))}</p></div>
+                <div class="detail-block"><h4>${escapeHTML(c.approachTools)}</h4><p>${escapeHTML(local(p.approach))}</p></div>
+                <div class="detail-block"><h4>${escapeHTML(c.roleLeadership)}</h4><p>${escapeHTML(local(p.role))}</p></div>
+                <div class="detail-block"><h4>${escapeHTML(c.implementedSolution)}</h4><p>${escapeHTML(local(p.solution))}</p></div>
+                <div class="detail-block"><h4>${escapeHTML(c.statusValidation)}</h4><p>${escapeHTML(local(p.status))}</p></div>
+              </div>
+            </details>
+          </article>`;
+      }
+
+      function filteredProjects(ignoreFilters=false) {
+        let projects=[...DATA.projects];
+        if (!ignoreFilters) {
+          const q=$('searchInput').value.trim().toLocaleLowerCase(locale());
+          const client=$('clientFilter').value;
+          const category=$('categoryFilter').value;
+          if (q) {
+            projects=projects.filter(p => [
+              local(p.project),local(p.sector),local(p.type),local(p.result),local(p.challenge),local(p.approach),local(p.role),local(p.solution),local(p.status),
+              ...(local(p.categories)||[])
+            ].join(' ').toLocaleLowerCase(locale()).includes(q));
+          }
+          if (client) projects=projects.filter(p=>p.clientCode===client);
+          if (category) projects=projects.filter(p=>(local(p.categories)||[]).includes(category));
+        }
+        const sort=ignoreFilters ? 'impact-desc' : $('sortSelect').value;
+        projects.sort((a,b)=>{
+          if(sort==='impact-asc') return a.impact-b.impact;
+          if(sort==='saving-desc') return (b.saving ?? -1)-(a.saving ?? -1);
+          if(sort==='project-asc') return String(local(a.project)).localeCompare(String(local(b.project)),locale());
+          return b.impact-a.impact;
+        });
+        return projects;
+      }
+
+      function renderProjects(ignoreFilters=false) {
+        let projects;
+        if (!libraryExpanded && !ignoreFilters) {
+          projects = teaserIds.map(id=>DATA.projects.find(p=>p.id===id));
+        } else {
+          projects = filteredProjects(ignoreFilters);
+        }
+        $('projectGrid').innerHTML = projects.map(projectCard).join('') || `<p>${escapeHTML(C[lang].noResults)}</p>`;
+        if (libraryExpanded) {
+          $('resultsMeta').textContent = `${projects.length} ${C[lang].projectsOf} ${projectCount} ${C[lang].projectsLabel}`;
+        }
+      }
+
+      function expandLibrary(fromPrint=false) {
+        if (!libraryExpanded) {
+          libraryExpanded=true;
+          $('libraryControls').hidden=false;
+          $('resultsMeta').hidden=false;
+          $('showAllWrap').hidden=true;
+          $('showAllButton').setAttribute('aria-expanded','true');
+        }
+        renderProjects(fromPrint);
+      }
+
+      function renderAll() {
+        renderStaticCopy();
+        renderImpactClients();
+        renderSelectedCases();
+        renderMethods();
+        populateControls();
+        $('libraryControls').hidden=!libraryExpanded;
+        $('resultsMeta').hidden=!libraryExpanded;
+        $('showAllWrap').hidden=libraryExpanded;
+        renderProjects();
+      }
+
+      $('showAllButton').addEventListener('click',()=>expandLibrary(false));
+      ['searchInput','clientFilter','categoryFilter','sortSelect'].forEach(id => {
+        $(id).addEventListener(id==='searchInput' ? 'input' : 'change',()=>renderProjects(false));
+      });
+      $('langEn').addEventListener('click',()=>{ if(lang==='en')return; lang='en'; renderAll(); });
+      $('langNl').addEventListener('click',()=>{ if(lang==='nl')return; lang='nl'; renderAll(); });
+      $('printButton').addEventListener('click',()=>window.print());
+
+      let printWasExpanded = false;
+      window.addEventListener('beforeprint', () => {
+        printWasExpanded = libraryExpanded;
+        if (libraryExpanded) {
+          printFilterState = {
+            search:$('searchInput').value,
+            client:$('clientFilter').value,
+            category:$('categoryFilter').value,
+            sort:$('sortSelect').value
+          };
+        } else {
+          printFilterState = null;
+        }
+        expandLibrary(true);
+        renderProjects(true);
+        openedForPrint = [...document.querySelectorAll('details:not([open])')];
+        openedForPrint.forEach(d => d.open = true);
+      });
+
+      window.addEventListener('afterprint', () => {
+        openedForPrint.forEach(d => d.open = false);
+        openedForPrint = [];
+        if (printFilterState) {
+          $('searchInput').value=printFilterState.search;
+          $('clientFilter').value=printFilterState.client;
+          $('categoryFilter').value=printFilterState.category;
+          $('sortSelect').value=printFilterState.sort;
+          renderProjects(false);
+        } else {
+          renderProjects(false);
+        }
+        printFilterState = null;
+      });
+
+      const navLinks=[...document.querySelectorAll('.nav-links>a')];
+      const sections=['impact','cases','methods','library'].map(id=>$(id));
+      if ('IntersectionObserver' in window) {
+        const observer=new IntersectionObserver(entries=>{
+          const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+          if(!visible)return;
+          navLinks.forEach(link=>link.classList.toggle('active',link.getAttribute('href')===`#${visible.target.id}`));
+        },{rootMargin:'-20% 0px -70% 0px',threshold:[0,.2,.5]});
+        sections.forEach(section=>observer.observe(section));
+      }
+
+      renderAll();
+    })();
+  </script>
+</body>
+</html>
